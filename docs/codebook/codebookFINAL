@@ -1,0 +1,51 @@
+# Codebook: Presidential Endorsements, 1972-2012
+
+**Version:** v1.0
+**Release Date:** YYYY-MM-DD
+**Maintainer:** Katherine Parslow
+**Contact:** katherine.r.parslow@vanderbilt.edu
+**Project URL:** 
+
+---
+
+## 1. Dataset Overview
+- **Dataset Name:** Presidential Endorsements, 1972-2012
+- **Unit of Analysis:** endorsement event
+- **Time Coverage:** 1972-2012
+- **Geographic Coverage:** United States
+- **Number of Observations:**
+- **Number of Variables:**
+
+---
+
+## 2. Data Collection
+** Sources**
+
+** Inclusion criteria**
+
+** Exclusion criteria**
+
+## 3. Variable Definitions
+
+| Variable | Type | Values / Range | Description |
+|----------|------|----------------|-------------|
+| contest_id | string | 1-N | Unique identifier of primary contes |
+| year | string | 1972-2012 | Primary contest year |
+| party_id | integer | 1 = Democrat, 2 = Republican | Identifies contest party |
+| party | string | DEM, REP | Party |
+| endorsement_id | integer | 1-N | Unique identifier of endorsement event |
+| endorser_name | string | First name + last name | Full name of endorser |
+| endorser_first_name | string | First name | First name of endorser |
+| endorser_last_name | string | Last name | Last name of endorser |
+| endorser_id | integer | 1 - N | Unique identifier of endorser |
+| endorser_description | Governor, U.S. Senator, U.S. Representative | Office/position of endorser |
+| endorsee | string | Last name | Endorsed candidate |
+| state | string | AK-WY | Endorser state |
+| district | integrer | 1-N | Disctict of endorser (if representatitve) |
+| region | string |      | Endorser region |
+| home_state | integer | {0,1} | Indicates endorser and endorsee share the same home state |
+| home_region | integer | {0,1} | Indicates endorser and endorsee from same home region |
+
+
+
+
