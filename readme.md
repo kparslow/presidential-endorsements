@@ -1,7 +1,7 @@
 presidential-endorsements
 ================
 
-# presidential-endorsements
+# Presidential Endorsements Data
 
 The project compiles and cleans data from presidential primary contests
 to create a history of endorsements by elected officials, interest
