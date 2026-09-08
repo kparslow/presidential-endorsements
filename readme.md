@@ -1,3 +1,67 @@
-READ ME
+presidential-endorsements
 ================
 
+# presidential-endorsements
+
+The project compiles and cleans data from presidential primary contests
+to create a history of endorsements by elected officials, interest
+groups, and other individuals. The purpose of the meta data set is to
+document and analyze patterns in the endorsement behavior of political
+insiders for the purpose of understanding who they endorse and when they
+endorse.
+
+## Project Status
+
+*In progress — data compilation phase.*
+
+## Overview
+
+Endorsements act as a strategic tool for political insiders and elite to
+transmit information about candidates and influence voter beliefs and
+behavior. Other data sets tracking endorsement-level activity have
+limited scope and are often disjointed by individual election contests.
+Earlier more comprehensive endorsement data sets, e.g. Cohen et
+al. (2008), has not maintained data from elections over the past two
+decades. This project seeks to build on the comprehensive data set built
+by Cohen et al. to create an up-to-date database of endorsements
+beginning in 1972 up to the 2024 presidential primary.
+
+## Repository Structure
+
+    .
+    ├── README.Rmd
+    ├── README.md
+    ├── data
+    │   ├── processed
+    │   └── raw
+    ├── docs
+    ├── output
+    └── scripts
+
+## Data Sources
+
+This project compiles data from the following sources (see
+`docs/data_sources.md` for full documentation of structure, known
+issues, and cleaning steps for each):
+
+1.  **The Party Decides**
+2.  **FiveThirtyEight (538)**
+
+## Reproducing the Pipeline
+
+Scripts are numbered and should be run in order.
+
+## Requirements
+
+- R version 2026.08.2+200
+- Key packages:
+
+## Data Editing Notes
+
+Manual data entry/edits are made in Excel and documented via Git commit
+messages. See commit history for full change log of data edits.
+
+## Author
+
+Katherine Parslow, Vanderbilt University Department of Economics.
+Contact: <katherine.r.parslow@vanderbilt.edu>
