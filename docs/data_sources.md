@@ -110,7 +110,99 @@ raw data file before/during inspection.
   > Decides: Presidential Nominations Before and After Reform.* Chicago: 
   > Univeristy of Chicago Press.
 
-## Source 2: [Name]
+--- 
+
+## Source 2: FiveThirtyEight Presidential Primary Endorsements Data
+
+**Acquisition Status:** File acquired (shared directly by source)
+**Processing Status:** Inspected
+
+**Format:** .xlsx
+**File name(s):** `data/raw/Prez primary endorsements 1972-2012.xlsx`
+(2 sheets: "Pivot table", "Raw data")
+**Provider/origin:** Shared via email by Nathaniel Rakich (FiveThirtyEight) in 
+response to inquiry about the data underlying FiveThirtyEight's endorsement trackers
+**Date acquired:** November 27, 2024
+**Date range covered:** 1971-02-07 to 2012-08-26 (endorsement dates); covers 16 nomination
+contests from 1972 to 2012
+**Unit of observation:** Endorsement event-level
+
+### Structure
+
+**Sheet 1: "Raw data"**
+- 10 columns: `contest`, `endorsee`, `endorser`, `description`, `date`, `state`,
+`count`, `points`, `source`, `url`
+- 3,422 rows, no blank padding rows, no exact duplicates
+- Contests: 1972D, 1976D, 1976R, 1980D, 1980R, 1984D, 1988D, 1988R, 1992D, 1996R,
+2000D, 2000R, 2004D, 2008D, 2008R, 2012R
+- `url` column is entirely empty— appears to be a vestigial column
+- `source` column is missing for 48 rows (all within 2008D/2008R contests)
+
+**Sheet 2: "Pivot table"**
+- A pre-built Excel pivot table (75 rows × 8 columns) summarizing points by 
+  candidate for a single contest (2012R in the visible view). Not a 
+  distinct data source. This is a derived summary view Excel retains 
+  alongside the raw data, not something to import for cleaning.
+
+### Known Issues
+
+1. **Substantial contest overlap with Source, much of it same-provenance**: 2,097
+of 3,422 rows (61%) fall within Source 1's contest range (1980-2004). Of those
+overlapping rows, 1,408 (67%) explicitly cite "Marty Cohen (The Party Decides)"
+as their source, implying that a large share of Source 2's overlapping data was 
+originally drawn from the same underlying research as Source 1. **Needs a deliberate 
+merge decision to avoid double-counting endorsements** (see Notes).
+2. **Contests unique to Source 2:** 1972D, 1976D, 1976R, 2008D, 2008R, and 2012R
+do not appear in Source 1. Notable, **1972D, 1976D, and 1976R may fill the gap** left
+by the "missing" 1972-1976 dataset referenced in Source 1's codebook.
+3. **Inconsistent state code casing:** `state` mixes uppercase (`CA`, `NY`) and lowercase
+(`ca`, `ny`) postal abbreviations for the same states, plus one full-text outlier,
+`"Northern Marina Islands"` (also likely misspelled), alongside the standard abbreviation
+`CNMI` used elsewhere. Needs standardization to a single consistent format.
+4. **Negative `points`/`count` values:** Values of -1, -5, -10 (points) and -1 (count)
+appear to represent a withdrawal of endorsement or opposition of a candidate. This is
+a substantively important distinction from Source 1, which does not negative code 
+opposition or withdrawn endorsements the same way. Needs clarification on how withdrawals
+should be treated relative to Source 1's schema.
+5. **`url` column is entirely empty** and likely safe to drop.
+6. **48 rows missing `source`** (all in 2008D/2008R)— need to find alternative mean so f
+verifying provenance of specific endorsements.
+
+### Cleaning / Transformation Steps Needed
+
+- [ ] Import only the "Raw data" sheet; discard/ignore "Pivot table"
+- [ ] Standardize `state` to consistent uppercase postal codes; resolve the "Northern
+    Marina Islands" / CNMI inconsistency
+- [ ] Decide how to treat negative `points`/`count` rows relative to Source 1's schema
+- [ ] Drop empty `url` column
+- [ ] Rename columns to match final schema naming convention
+- [ ] **Critical: resolve overlap with Source 1** for 1980-2004 contests before merging.
+    Likely need to de-duplicate as endorser/endorsee/date level, or choose one source as
+    authoritative for the overlapping period.
+
+### Join Key(s)
+- No pre-built numeric ID (unlike Source 1's `Endorsement number`/`Endorser number`).
+Matching to Source 1 will likely require a composite key — candidate/contest/endorser name/date —
+with attention to name-formatting differences between sources.
+
+### Notes
+
+- This source directly overlaps in provenance with Source 1 for a majority of shared-period
+row, since FiveThirtyEight's own dataset cites Marty Cohen's "The Party Decides" data
+as a source. Before merging, decide whether to: (a) use Source 1 as authoritative for 1980-2004
+and Source 2 only for its unique years (1972-1976, 2008-2012), or (b) attempt a full
+reconciliation/deduplication across both.
+- No codebook was provided with this file; column meanings were inferred from header names
+and data inspection. `points` appears to be a weighted measure similar in spirit to 
+Source 1's `Weight`/`Adjusted weight`.
+- Acquired via direct correspondence rather than public download — cite appropriately
+as a personal communication if used in publication, e.g.:
+  > Rakich, Nathaniel. FiveThirtyEight presidential primary endorsements
+  > data, 1972-2012. Shared via email, November 27, 2024.
+  
+---
+
+## Source 3: 
 
 **Acquisition Status:** 
 **Processing Status:** 
@@ -140,5 +232,6 @@ raw data file before/during inspection.
 ### Join Key(s)
 
 ### Notes
+
 
 
