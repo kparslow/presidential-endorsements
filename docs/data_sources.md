@@ -16,28 +16,85 @@ inspected, and cleaned.
 **File name(s):** 
 - `data/raw/Endorsement data.xls` (5.4MB)
 - `data/raw/Codebook for endorsement data.doc` (165KB)
+**Author(s):** Marty Cohen, David Karol, Hans Noel, and John Zaller
 **Provider/origin:** Direct download from Marty Cohen's personal website (http://www.martycohen.net/)
 **Date acquired:** 12/09/25
-**Date range covered:** 1980-2004
-**Unit of observation:** Endorsement event
+**Date range covered:** 1979-01-06 to 2004-01-19 (endorsement report dates); covers
+10 nomination contests from 1980 to 2004.
+**Unit of observation:** Endorsement event-level
 
 ### Structure
 
-- Number of rows / columns
-- Key variables
-- Any header/footer rows, merged cells, or multiple sheets to be aware of
+**Sheet 1: 1980-2004 (main data)**
+- 39 documented variables (A-AM), matching codebook exactly
+- 7,325 real data rows (endorsements)
+- Contests covered: 1980D, 1980R, 1984D, 1988D, 1988R, 1992D, 1996R, 2000D, 
+ 2000R, 2004D
+- Row counts by contest range from 226 (1980D) to 1,974 (2004D)
+- 5,928 distinct endorsers; 7,325 distinct endorsement events (primary key)
+ 
+ **Sheet 2: Extra Variables (undocumented — not in codebook)**
+- 16 additional variables: National, Intense policy demander, In-group (1) 
+  & (2), Out-group (1) & (2), David's ideology, Wes/Mark's ideology, 
+  Nominate, Discrete, Mainstream, Weighted mainstream, Distance from median 
+  good/bad, Weighted good distance from median
+- 7,325 distinct rows
+- Joins to main sheet 1:1 via `Endorsement number`
 
 ### Known Issues
 
-- Missing values
-- Inconsistent formatting
-- Duplicates
-- Anything requiring manual review in Excel before scripting
+1. **Undocumented sheet:** "Extra Variables" is not described anywhere in the
+codebook. Variable meanings are inferable from names but not authoritative.
+2. **Referenced but missing data:** The codebook file's internal metadata title 
+is "Two data sets: 1980-2004 and 1972-1976," but only the 1980-2004 data is present 
+in this download. The 1972-1976 data is recovered from a second data set provided by FiveThirtyEight.
+3. **Inconsistent missing-value coding:** Several nominally-numeric columns (e.g, `Home state endorsement`,
+`Geography`, `Endorser's ideology`, `Weighted ideological distance`, `Weighted breadth`)
+mix real numeric values with literal space-character strings (`' '`, `'  '`) as
+missing-value placeholders, causing these columns to be read as text rather than numeric.
+`Count` similarly mixes numbers with the literal string `"unknown"`.
+4. **DATE column mixes real dates and text placeholders:** 9 rows contain text like
+`"NO DATE"`, `"pre-May 27th"`, or `"post-October 6th"` instead of a parseable date.
+5. **Substantial missingness in ideological variables:**  `Breadth`, `Breadth dummy`,
+`Endorser's ideology`, and related weighted columns are missing for ~61–62% of 
+rows (4,486–4,512 of 7,325). Per the codebook, this reflects real limitations in 
+ideology coding (see Appendix C), not a data error. It substantially limits the 
+usable sample for any ideology-based analysis.
+6. **Gap in Endorser number sequence**: `Endorser number` spans 1–5,929 (5,929 
+possible IDs, matching the codebook's stated range), but only 5,928 distinct values 
+actually appear in the data — **endorser number 5105 never occurs**. Likely an ID 
+left over from the original researchers' own data cleaning (e.g., a removed duplicate), 
+but worth confirming rather than assuming if endorser-level analysis is planned.
 
 ### Cleaning / Transformation Steps Needed
 
+- [ ] Convert `.xls` to `.csv` or `.xlsx` for long-term compatibility 
+      (note: legacy `.xls` requires `xlrd` engine in pandas, or a 
+      LibreOffice-based conversion if `xlrd` isn't available)
+- [ ] Trim trailing blank rows (keep only first 7,325 
+      data rows in each)
+- [ ] Standardize missing-value encoding: convert literal space strings 
+      and `"unknown"`/`"NO DATE"` text placeholders to proper `NA`, 
+      consistently across all columns
+- [ ] Parse `DATE` column to a proper date type; decide how to handle the 
+      9 rows with text placeholders instead of dates (drop, impute 
+      approximate date, or flag as a separate missingness category)
+- [ ] Rename columns to a consistent, script-friendly naming convention 
+      (e.g., snake_case) matching the rest of the final schema
+- [ ] Join `Extra variables` sheet to main sheet on `Endorsement number`
+- [ ] Document/infer meanings of the 16 undocumented "Extra variables" 
+      columns before using them in analysis
+- [ ] Decide on treatment of the ~61-62% missingness in ideology-related 
+      columns (e.g., separate ideology-subsample analysis vs. imputation)
+      
 ### Join Key(s)
 
+- `Endorsement number` — joins main sheet to "Extra variables" sheet, 
+  1:1 relationship (both trimmed to 7,325 rows)
+- `Endorser number` — links endorsers who appear across multiple contests 
+  (5,928 distinct endorsers across 7,325 endorsements, so this is not 
+  unique per row)
+  
 ### Notes
 
 - Primary/foundational data source for this project.
