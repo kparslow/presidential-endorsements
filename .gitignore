@@ -2,7 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+
 .DS_Store
+data/.DS_Store
 
 # Exclude raw data
 data/raw
