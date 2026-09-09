@@ -149,9 +149,12 @@ contests from 1972 to 2012
 1. **Substantial contest overlap with Source, much of it same-provenance**: 2,097
 of 3,422 rows (61%) fall within Source 1's contest range (1980-2004). Of those
 overlapping rows, 1,408 (67%) explicitly cite "Marty Cohen (The Party Decides)"
-as their source, implying that a large share of Source 2's overlapping data was 
-originally drawn from the same underlying research as Source 1. **Needs a deliberate 
-merge decision to avoid double-counting endorsements** (see Notes).
+as their source. Critically, **Source 2 only includes endorsements from Governors, U.S. Senators, and U.S. Representatives**,
+which is a narrower scope than Source 1. This means that for the 1980-2004 overlap period,
+Source 2 is primarily a subset of Source 1, rather than independent or additive data. Practically,
+this simplifies the merge decision (see Notes) but means Source 2 should not be treated
+as adding new endorsement coverage for those years. Its main value there is as a cross-check,
+not a supplement.
 2. **Contests unique to Source 2:** 1972D, 1976D, 1976R, 2008D, 2008R, and 2012R
 do not appear in Source 1. Notable, **1972D, 1976D, and 1976R may fill the gap** left
 by the "missing" 1972-1976 dataset referenced in Source 1's codebook.
@@ -176,9 +179,10 @@ verifying provenance of specific endorsements.
 - [ ] Decide how to treat negative `points`/`count` rows relative to Source 1's schema
 - [ ] Drop empty `url` column
 - [ ] Rename columns to match final schema naming convention
-- [ ] **Critical: resolve overlap with Source 1** for 1980-2004 contests before merging.
-    Likely need to de-duplicate as endorser/endorsee/date level, or choose one source as
-    authoritative for the overlapping period.
+- [ ] **Merge with Source 1 for 1980-2004:** since Source 2 is scoped to Governors/Senators/Reps
+    only, decide whether to (a) use Source 1 exclusively for 1980-2004 endorser types it already covers
+    and ignore Source 2's overlapping rows entirely, or (b) use Source 2 as a validation cross-check
+    against Source 1's Governor/Senator/Rep subset before finalizing data for that period.
 
 ### Join Key(s)
 - No pre-built numeric ID (unlike Source 1's `Endorsement number`/`Endorser number`).
@@ -187,18 +191,26 @@ with attention to name-formatting differences between sources.
 
 ### Notes
 
-- This source directly overlaps in provenance with Source 1 for a majority of shared-period
-row, since FiveThirtyEight's own dataset cites Marty Cohen's "The Party Decides" data
-as a source. Before merging, decide whether to: (a) use Source 1 as authoritative for 1980-2004
-and Source 2 only for its unique years (1972-1976, 2008-2012), or (b) attempt a full
-reconciliation/deduplication across both.
-- No codebook was provided with this file; column meanings were inferred from header names
-and data inspection. `points` appears to be a weighted measure similar in spirit to 
-Source 1's `Weight`/`Adjusted weight`.
-- Acquired via direct correspondence rather than public download — cite appropriately
-as a personal communication if used in publication, e.g.:
-  > Rakich, Nathaniel. FiveThirtyEight presidential primary endorsements
-  > data, 1972-2012. Shared via email, November 27, 2024.
+- This source directly overlaps in provenance with Source 1 for a majority 
+  of shared-period rows, since FiveThirtyEight's own dataset cites Marty 
+  Cohen's "The Party Decides" data as a source. However, since Source 2 is 
+  scoped only to Governor/Senator/Representative endorsers, it is best 
+  understood as **a subset of Source 1 for 1980-2004**, not an independent 
+  or additive source for that period. This meaningfully simplifies the 
+  merge decision: for 1980-2004, Source 1 can likely serve as the sole 
+  authoritative source (since it already includes what Source 2 covers, 
+  plus more endorser types), with Source 2 reserved for its unique 
+  contribution — the 1972-1976 and 2008-2012 contests Source 1 lacks. 
+  Source 2's overlapping rows may still be useful as a validation check 
+  on Source 1's Governor/Senator/Representative records, but shouldn't be 
+  merged in as new data for that period.
+- No codebook was provided with this file; column meanings were inferred 
+  from header names and data inspection. `points` appears to be a weighted 
+  measure similar in spirit to Source 1's `Weight`/`Adjusted weight`.
+- Acquired via direct correspondence rather than public download — cite 
+  appropriately as a personal communication if used in publication, e.g.:
+    > Rakich, Nathaniel. FiveThirtyEight presidential primary endorsements
+    > data, 1972-2012. Shared via email, November 27, 2024.
   
 ---
 
