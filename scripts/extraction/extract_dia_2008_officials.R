@@ -83,7 +83,11 @@ doc <- read_html(input_path, encoding = "ISO-8859-1")
 # The page's two party columns are the two <td> cells in the first <tr> of
 # the <table cols="2> element
 outer_table <- html_element(doc, "table[cols='2']")
-tds <- xml_find_all(outer_table, ".//tr[1]/td")
+# Use "./tbody/tr[1]/td" (direct children only) rather than ".//tr[1]/td"
+# (all descendants) -- the latter incorrectly also matches the small nested
+# header sub-table inside each column, throwing off the R/D label alignment
+first_tr <- xml_find_first(outer_table, "./tbody/tr")
+tds <- xml_find_all(first_tr, "./td")
 
 party_labels <- c("R", "D") # order matches the page: Republicans, then Democracts
 rows <- list()
