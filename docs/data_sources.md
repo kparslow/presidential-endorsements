@@ -207,10 +207,9 @@ with attention to name-formatting differences between sources.
 - No codebook was provided with this file; column meanings were inferred 
   from header names and data inspection. `points` appears to be a weighted 
   measure similar in spirit to Source 1's `Weight`/`Adjusted weight`.
-- Acquired via direct correspondence rather than public download — cite 
-  appropriately as a personal communication if used in publication, e.g.:
-    > Rakich, Nathaniel. FiveThirtyEight presidential primary endorsements
-    > data, 1972-2012. Shared via email, November 27, 2024.
+- The raw data file (Prez_primary_endorsements_1972-2012.xlsx) is intentionally 
+  excluded from this public repository, since it was shared directly by Nathaniel 
+  Rakich via personal correspondence and its terms for redistribution were not specified.
   
 ---
 
