@@ -6,5 +6,5 @@
 .DS_Store
 data/.DS_Store
 
-# Exclude raw data
-data/raw
+# Exclude FiveThirtyEight raw data
+data/raw/Prez primary endorsements 1972-2012.xlsx
