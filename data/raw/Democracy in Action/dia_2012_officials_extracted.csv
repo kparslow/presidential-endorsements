@@ -1,0 +1,158 @@
+"contest_id","year","party","endorsee","endorser_name","endorser_description","endorser_party_note","state","district","date_raw","note","switch_direction","switch_candidate","evidence_url","parsed_ok","raw_text","post_primary"
+"2012R",2012,"R","Mitt Romney","Jan Brewer","Governor",,"AZ",,"02/26/12",,,,"https://www.p2012.org/romney/romney022612praz.html",TRUE,"Gov. Jan Brewer (AZ) 02/26/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Butch Otter","Governor",,"ID",,"06/20/11",,,,"../romney/romney062011prid.html",TRUE,"Gov. Butch Otter (ID) 06/20/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Rick Snyder","Governor",,"MI",,"02/16/12",,,,"https://www.p2012.org/romney/romney021612prmi.html",TRUE,"Gov. Rick Snyder (MI) 02/16/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Phil Bryant","Governor",,"MS",,"03/08/12",,,,"https://www.p2012.org/romney/romney030812prms.html",TRUE,"Gov. Phil Bryant (MS) 03/08/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Dave Heineman","Governor",,"NE",,"06/10/11",,,,"../romney/romney061111prut.html",TRUE,"Gov. Dave Heineman (NE) 06/10/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Chris Christie","Governor",,"NJ",,"10/11/11",,,,"../romney/romney101111prnj.html",TRUE,"Gov. Chris Christie (NJ) 10/11/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Nikki Haley","Governor",,"SC",,"12/16/11",,,,"https://www.p2012.org/romney/romney121611prsc.html",TRUE,"Gov. Nikki Haley (SC) 12/16/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Bill Haslam","Governor",,"TN",,"01/11/12",,,,"https://www.p2012.org/romney/romney011112prtn.html",TRUE,"Gov. Bill Haslam (TN) 01/11/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Bob McDonnell","Governor",,"VA",,"01/20/12",,,,"https://www.p2012.org/romney/romney012012prva.html",TRUE,"Gov. Bob McDonnell (VA) 01/20/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Gary Herbert","Governor",,"UT",,"02/02/12",,,,"https://www.p2012.org/romney/romney020212prut.html",TRUE,"Gov. Gary Herbert (UT) 02/02/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Luis Fortuño","Governor",,"PR",,"01/27/12",,,,"https://www.p2012.org/romney/romney012712prpr.html",TRUE,"Gov. Luis Fortuño (PR) 01/27/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Eddie Baza Calvo","Governor",,"GU",,"03/09/12",,,,,TRUE,"Gov. Eddie Baza Calvo (GU) 03/09/12",FALSE
+"2012R",2012,"R","Mitt Romney","Benigno R. Fitial","Governor",,"CNMI",,"03/09/12","19 Senators",,,,TRUE,"Gov. Benigno R. Fitial (CNMI) 03/09/12 19 Senators",FALSE
+"2012R",2012,"R","Mitt Romney","Lisa Murkowski","U.S. Senator",,"AK",,"12/02/11",,,,"https://www.p2012.org/romney/romney120211prak.html",TRUE,"Sen. Lisa Murkowski (AK) 12/02/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","John McCain","U.S. Senator",,"AZ",,"01/05/12",,,,"https://www.p2012.org/romney/romney010512praz.html",TRUE,"Sen. John McCain (AZ) 01/05/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Jim Risch","U.S. Senator",,"ID",,"06/20/11",,,,"https://www.p2012.org/romney/romney062011prid.html",TRUE,"Sen. Jim Risch (ID) 06/20/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Mark Kirk","U.S. Senator",,"IL",,"12/19/11",,,,"https://www.p2012.org/romney/romney121911pril.html",TRUE,"Sen. Mark Kirk (IL) 12/19/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Scott Brown","U.S. Senator",,"MA",,,,,,,TRUE,"Sen. Scott Brown (MA)",FALSE
+"2012R",2012,"R","Mitt Romney","Thad Cochran","U.S. Senator",,"MS",,"10/12/11",,,,"../romney/romney101211prms.html",TRUE,"Sen. Thad Cochran (MS) 10/12/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Roy Blunt","U.S. Senator",,"MO",,"09/20/11",,,,"../romney/romney092011prmo.html",TRUE,"Sen. Roy Blunt (MO) 09/20/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Mike Johanns","U.S. Senator",,"NE",,"12/21/11",,,,"https://www.p2012.org/romney/romney122111prne.html",TRUE,"Sen. Mike Johanns (NE) 12/21/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Kelly Ayotte","U.S. Senator",,"NH",,"11/20/11",,,,"../romney/romney112011prnh.html",TRUE,"Sen. Kelly Ayotte (NH) 11/20/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Richard Burr","U.S. Senator",,"NC",,"12/29/11",,,,"https://www.p2012.org/romney/romney122911prnc.html",TRUE,"Sen. Richard Burr (NC) 12/29/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","John Hoeven","U.S. Senator",,"ND",,"11/18/11",,,,"https://www.p2012.org/romney/romney111811prnd.html",TRUE,"Sen. John Hoeven (ND) 11/18/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Rob Portman","U.S. Senator",,"OH",,"01/19/12",,,,"https://www.p2012.org/romney/romney011912proh.html",TRUE,"Sen. Rob Portman (OH) 01/19/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Tom Coburn","U.S. Senator",,"OK",,"03/04/12",,,,,TRUE,"Sen. Tom Coburn (OK) 03/04/12",FALSE
+"2012R",2012,"R","Mitt Romney","John Thune","U.S. Senator",,"SD",,"11/23/11",,,,"https://www.p2012.org/romney/romney112311prsd.html",TRUE,"Sen. John Thune (SD) 11/23/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Lamar Alexander","U.S. Senator",,"TN",,"02/24/12",,,,"https://www.p2012.org/romney/romney022412prtn.html",TRUE,"Sen. Lamar Alexander (TN) 02/24/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Orrin Hatch","U.S. Senator",,"UT",,"07/06/11","note date of formal endorsement, Hatch is a longtime supporter and expressed preference for Romney in 2010",,,,TRUE,"Sen. Orrin Hatch (UT) 07/06/11 (note date of formal endorsement, Hatch is a longtime supporter and expressed preference for Romney in 2010)",FALSE
+"2012R",2012,"R","Mitt Romney","Mike Lee","U.S. Senator",,"UT",,"03/26/12",,,,"https://www.p2012.org/romney/romney032612prut.html",TRUE,"Sen. Mike Lee (UT) 03/26/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Ron Johnson","U.S. Senator",,"WI",,"04/01/12",,,,"https://www.p2012.org/romney/romney040112prwi.html",TRUE,"Sen. Ron Johnson (WI) 04/01/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Marco Rubio","U.S. Senator",,"FL",,"03/28/12","...78 House members",,,"../romney/romney032812prfl.html",TRUE,"*Sen. Marco Rubio (FL) 03/28/12 + ...78 House members",TRUE
+"2012R",2012,"R","Mitt Romney","Mike Rogers","U.S. Representative",,"AL","3","08/30/11",,,,,TRUE,"Rep. Mike Rogers (AL-3) 08/30/11",FALSE
+"2012R",2012,"R","Mitt Romney","Jeff Flake","U.S. Representative",,"AZ","6","09/19/11",,,,"../romney/romney091911praz.html",TRUE,"Rep. Jeff Flake (AZ-6) 09/19/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Tim Griffin","U.S. Representative",,"AR","2","10/05/11",,,,"../romney/romney100511prar.html",TRUE,"Rep. Tim Griffin (AR-2) 10/05/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Steve Womack","U.S. Representative",,"AR","3","01/19/12",,,,"https://www.p2012.org/romney/romney011912prar.html",TRUE,"Rep. Steve Womack (AR-3) 01/19/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Wally Herger","U.S. Representative",,"CA","2","09/21/11",,,,"../romney/romney092111prca.html",TRUE,"Rep. Wally Herger (CA-2) 09/21/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Jeff Denham","U.S. Representative",,"CA","19","03/27/12",,,,"https://www.p2012.org/romney/romney032712prca3.html",TRUE,"Rep. Jeff Denham (CA-19) 03/27/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Kevin McCarthy","U.S. Representative",,"CA","22","03/26/12",,,,"https://www.p2012.org/romney/romney032612prca.html",TRUE,"Rep. Kevin McCarthy (CA-22) 03/26/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Buck McKeon","U.S. Representative",,"CA","25","06/23/11",,,,,TRUE,"Rep. Buck McKeon (CA-25) 06/23/11",FALSE
+"2012R",2012,"R","Mitt Romney","Jerry Lewis","U.S. Representative",,"CD","41","12/06/11",,,,"https://www.p2012.org/romney/romney120611prca.html",TRUE,"Rep. Jerry Lewis (CD-41) 12/06/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Ken Calvert","U.S. Representative",,"CD","44","12/06/11",,,,,TRUE,"Rep. Ken Calvert (CD-44) 12/06/11",FALSE
+"2012R",2012,"R","Mitt Romney","Mary Bono Mack","U.S. Representative",,"CA","45","06/23/11",,,,,TRUE,"Rep. Mary Bono Mack (CA-45) 06/23/11",FALSE
+"2012R",2012,"R","Mitt Romney","Dana Rohrabacher","U.S. Representative",,"CA","46","12/12/11",,,,"../romney/romney121211prca.html",TRUE,"Rep. Dana Rohrabacher (CA-46) 12/12/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","John Campbell","U.S. Representative",,"CA","48","07/20/11",,,,,TRUE,"Rep. John Campbell (CA-48) 07/20/11",FALSE
+"2012R",2012,"R","Mitt Romney","Darrell Issa","U.S. Representative",,"CA","49","09/22/11",,,,"https://www.p2012.org/romney/romney092211prca.html",TRUE,"Rep. Darrell Issa (CA-49) 09/22/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Brian Bibray","U.S. Representative",,"CD","50","12/06/11",,,,,TRUE,"Rep. Brian Bibray (CD-50) 12/06/11",FALSE
+"2012R",2012,"R","Mitt Romney","Jeff Miller","U.S. Representative",,"FL","1","10/28/11",,,,"https://www.p2012.org/romney/romney102811prfl.html",TRUE,"Rep. Jeff Miller (FL-1) 10/28/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Ander Crenshaw","U.S. Representative",,"FL","2","06/16/11",,,,,TRUE,"Rep. Ander Crenshaw (FL-2) 06/16/11",FALSE
+"2012R",2012,"R","Mitt Romney","John Mica","U.S. Representative",,"FL","7","01/16/12",,,,"https://www.p2012.org/romney/romney011612prfl.html",TRUE,"Rep. John Mica (FL-7) 01/16/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Connie Mack","U.S. Representative",,"FL","14","04/14/11","reported by St. Petersburg Times on",,,,TRUE,"Rep. Connie Mack (FL-14) reported by St. Petersburg Times on 04/14/11",FALSE
+"2012R",2012,"R","Mitt Romney","Tom Rooney","U.S. Representative",,"FL","16","06/16/11",,,,,TRUE,"Rep. Tom Rooney (FL-16) 06/16/11",FALSE
+"2012R",2012,"R","Mitt Romney","Ileana Ros-Lehtinen","U.S. Representative",,"FL","18","11/29/11",,,,"https://www.p2012.org/romney/romney112911prfl.html",TRUE,"Rep. Ileana Ros-Lehtinen (FL-18) 11/29/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Mario Diaz-Balart","U.S. Representative",,"FL","21","11/29/11",,,,,TRUE,"Rep. Mario Diaz-Balart (FL-21) 11/29/11",FALSE
+"2012R",2012,"R","Mitt Romney","Sandy Adams","U.S. Representative",,"FL","24","01/18/12",,,,"https://www.p2012.org/romney/romney011812prfl.html",TRUE,"Rep. Sandy Adams (FL-24) 01/18/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Mike Simpson","U.S. Representative",,"ID","1","06/20/11",,,,,TRUE,"Rep. Mike Simpson (ID-1) 06/20/11",FALSE
+"2012R",2012,"R","Mitt Romney","Robert Dold","U.S. Representative",,"IL","10","11/14/11",,,,"https://www.p2012.org/romney/romney111411pril.html",TRUE,"Rep. Robert Dold (IL-10) 11/14/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Judy Biggert","U.S. Representative",,"IL","13","10/12/11",,,,"https://www.p2012.org/romney/romney101211pril.html",TRUE,"Rep. Judy Biggert (IL-13) 10/12/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Aaron Schock","U.S. Representative",,"IL","18","11/08/11",,,,"https://www.p2012.org/romney/romney110811pril.html",TRUE,"Rep. Aaron Schock (IL-18) 11/08/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","John Shimkus","U.S. Representative",,"IL","19","03/18/12",,,,"https://www.p2012.org/romney/romney031812pril.html",TRUE,"Rep. John Shimkus (IL-19) 03/18/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Todd Rokita","U.S. Representative",,"IN","4","09/23/11",,,,"../romney/romney092311prin.html",TRUE,"Rep. Todd Rokita (IN-4) 09/23/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Ed Whitfield","U.S. Representative",,"KY","1","10/17/11",,,,"https://www.p2012.org/romney/romney101711prky.html",TRUE,"Rep. Ed Whitfield (KY-1) 10/17/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Harold Rogers","U.S. Representative",,"KY","5","10/17/11",,,,,TRUE,"Rep. Harold Rogers (KY-5) 10/17/11",FALSE
+"2012R",2012,"R","Mitt Romney","Rodney Alexander","U.S. Representative",,"LA","5","10/06/11",,,,"../romney/romney100611prla.html",TRUE,"Rep. Rodney Alexander (LA-5) 10/06/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Dan Benishek","U.S. Representative",,"MI","1","01/20/12",,,,"https://www.p2012.org/romney/romney012012prmi.html",TRUE,"Rep. Dan Benishek (MI-1) 01/20/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Bill Huizenga","U.S. Representative",,"MI","2","01/09/12",,,,"https://www.p2012.org/romney/romney010912prmi.html",TRUE,"Rep. Bill Huizenga (MI-2) 01/09/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Dave Camp","U.S. Representative",,"MI","4","12/20/11",,,,"https://www.p2012.org/romney/romney122011prmi.html",TRUE,"Rep. Dave Camp (MI-4) 12/20/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Fred Upton","U.S. Representative",,"MI","6","02/08/12",,,,"https://www.p2012.org/romney/romney020812prmi.html",TRUE,"Rep. Fred Upton (MI-6) 02/08/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Tim Walberg","U.S. Representative",,"MI","7","02/08/12",,,,,TRUE,"Rep. Tim Walberg (MI-7) 02/08/12",FALSE
+"2012R",2012,"R","Mitt Romney","Mike Rogers","U.S. Representative",,"MI","8","12/22/11",,,,"https://www.p2012.org/romney/romney122211prmi.html",TRUE,"Rep. Mike Rogers (MI-8) 12/22/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Thaddeus McCotter","U.S. Representative",,"MI","11","09/22/11",,,,"https://www.p2012.org/mccotter/mccotter092211st.html",TRUE,"Rep. Thaddeus McCotter (MI-11) 09/22/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Candice Miller","U.S. Representative",,"MI","10","03/21/12",,,,"../romney/romney032112prcm.html",TRUE,"*Rep. Candice Miller (MI-10) 03/21/12 +",TRUE
+"2012R",2012,"R","Mitt Romney","Erik Paulsen","U.S. Representative",,"MN","3","01/26/12",,,,"https://www.p2012.org/romney/romney012612prmn.html",TRUE,"Rep. Erik Paulsen (MN-3) 01/26/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Billy Long","U.S. Representative",,"MO","7","01/12/12",,,,"https://www.p2012.org/romney/romney011212prmo.html",TRUE,"Rep. Billy Long (MO-7) 01/12/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Mark Amodei","U.S. Representative",,"NV","2","10/26/11",,,,"https://www.p2012.org/romney/romney102611prnv.html",TRUE,"Rep. Mark Amodei (NV-2) 10/26/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Joe Heck","U.S. Representative",,"NV","3","03/22/11",,,,,TRUE,"Rep. Joe Heck (NV-3) 03/22/11",FALSE
+"2012R",2012,"R","Mitt Romney","Charlie Bass","U.S. Representative",,"NH","2","11/21/11",,,,"https://www.p2012.org/romney/romney112111prnh.html",TRUE,"Rep. Charlie Bass (NH-2) 11/21/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Leonard Lance","U.S. Representative",,"NJ","7","10/26/11",,,,,TRUE,"Rep. Leonard Lance (NJ-7) 10/26/11",FALSE
+"2012R",2012,"R","Mitt Romney","Michael Grimm","U.S. Representative",,"NY","13","10/10/11",,,,"../romney/romney101011prny.html",TRUE,"Rep. Michael Grimm (NY-13) 10/10/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Nan Hayworth","U.S. Representative",,"NY","19","11/04/11",,,,"https://www.p2012.org/romney/romney110411prny.html",TRUE,"Rep. Nan Hayworth (NY-19) 11/04/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Virginia Foxx","U.S. Representative",,"NC","5","10/17/11",,,,,TRUE,"Rep. Virginia Foxx (NC-5) 10/17/11",FALSE
+"2012R",2012,"R","Mitt Romney","Howard Coble","U.S. Representative",,"NC","6","10/17/11",,,,"../romney/romney101711prnc.html",TRUE,"Rep. Howard Coble (NC-6) 10/17/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Patrick McHenry","U.S. Representative",,"NC","10","10/17/11",,,,,TRUE,"Rep. Patrick McHenry (NC-10) 10/17/11",FALSE
+"2012R",2012,"R","Mitt Romney","Mike Turner","U.S. Representative",,"OH","3","01/17/12",,,,"https://www.p2012.org/romney/romney011712proh.html",TRUE,"Rep. Mike Turner (OH-3) 01/17/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Steve LaTourette","U.S. Representative",,"OH","14","02/21/12",,,,"https://www.p2012.org/romney/romney022112proh.html",TRUE,"Rep. Steve LaTourette (OH-14) 02/21/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Jim Renacci","U.S. Representative",,"OH","16","10/25/11",,,,"https://www.p2012.org/romney/romney102511proh.html",TRUE,"Rep. Jim Renacci (OH-16) 10/25/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Greg Walden","U.S. Representative",,"OR","2","10/14/11",,,,"../romney/romney101411pror.html",TRUE,"Rep. Greg Walden (OR-2) 10/14/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Jim Gerlach","U.S. Representative",,"PA","6","11/09/11",,,,"https://www.p2012.org/romney/romney110911prpa.html",TRUE,"Rep. Jim Gerlach (PA-6) 11/09/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Mike Fitzpatrick","U.S. Representative",,"PA","8","03/27/12",,,,"https://www.p2012.org/romney/romney032712prpa.html",TRUE,"Rep. Mike Fitzpatrick (PA-8) 03/27/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Bill Shuster","U.S. Representative",,"PA","9","03/13/12",,,,"https://www.p2012.org/romney/romney031312prpa.html",TRUE,"Rep. Bill Shuster (PA-9) 03/13/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Charlie Dent","U.S. Representative",,"PA","15","03/13/12",,,,,TRUE,"Rep. Charlie Dent (PA-15) 03/13/12",FALSE
+"2012R",2012,"R","Mitt Romney","Phil Roe","U.S. Representative",,"TN","1","12/05/11",,,,,TRUE,"Rep. Phil Roe (TN-1) 12/05/11",FALSE
+"2012R",2012,"R","Mitt Romney","Jimmy Duncan","U.S. Representative",,"TN","2","12/05/11",,,,"../romney/romney120511prtn.html",TRUE,"Rep. Jimmy Duncan (TN-2) 12/05/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Diane Black","U.S. Representative",,"TN","6","12/05/11",,,,,TRUE,"Rep. Diane Black (TN-6) 12/05/11",FALSE
+"2012R",2012,"R","Mitt Romney","Scott DesJarlais","U.S. Representative",,"TN","4","03/02/12",,,,"https://www.p2012.org/romney/romney030212prtn.html",TRUE,"Rep. Scott DesJarlais (TN-4) 03/02/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Mike Conaway","U.S. Representative",,"TX","11","01/20/12",,,,"https://www.p2012.org/romney/romney012012prtx.html",TRUE,"Rep. Mike Conaway (TX-11) 01/20/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Kay Granger","U.S. Representative",,"TX","12","01/20/12",,,,,TRUE,"Rep. Kay Granger (TX-12) 01/20/12",FALSE
+"2012R",2012,"R","Mitt Romney","Mac Thornberry","U.S. Representative",,"TX","13","04/05/12",,,,"https://www.p2012.org/romney/romney040512prtx.html",TRUE,"Rep. Mac Thornberry (TX-13) 04/05/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Lamar Smith","U.S. Representative",,"TX","21","10/26/11",,,,"https://www.p2012.org/romney/romney102611prtx.html",TRUE,"Rep. Lamar Smith (TX-21) 10/26/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Pete Olson","U.S. Representative",,"TX","22","01/20/12",,,,,TRUE,"Rep. Pete Olson (TX-22) 01/20/12",FALSE
+"2012R",2012,"R","Mitt Romney","John Carter","U.S. Representative",,"TX","31","04/05/12",,,,,TRUE,"Rep. John Carter (TX-31) 04/05/12",FALSE
+"2012R",2012,"R","Mitt Romney","Pete Sessions","U.S. Representative",,"TX","32","04/05/12",,,,,TRUE,"Rep. Pete Sessions (TX-32) 04/05/12",FALSE
+"2012R",2012,"R","Mitt Romney","Rob Bishop","U.S. Representative",,"UT","1","07/06/11",,,,,TRUE,"Rep. Rob Bishop (UT-1) 07/06/11",FALSE
+"2012R",2012,"R","Mitt Romney","Jason Chaffetz","U.S. Representative",,"UT","3","07/05/11",,,,,TRUE,"Rep. Jason Chaffetz (UT-3) 07/05/11",FALSE
+"2012R",2012,"R","Mitt Romney","Eric Cantor","U.S. Representative",,"VA","7","03/04/12",,,,,TRUE,"Rep. Eric Cantor (VA-7) 03/04/12",FALSE
+"2012R",2012,"R","Mitt Romney","Jaime Herrera Beutler","U.S. Representative",,"WA","3","02/06/12",,,,"https://www.p2012.org/romney/romney020612prwa.html",TRUE,"Rep. Jaime Herrera Beutler (WA-3) 02/06/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Cathy McMorris Rodgers","U.S. Representative",,"WA","5","12/07/11",,,,"https://www.p2012.org/romney/romney120711prwa.html",TRUE,"Rep. Cathy McMorris Rodgers (WA-5) 12/07/11 +",FALSE
+"2012R",2012,"R","Mitt Romney","Dave Reichert","U.S. Representative",,"WA","8","02/28/12",,,,"https://www.p2012.org/romney/romney022812prwa.html",TRUE,"Rep. Dave Reichert (WA-8) 02/28/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Paul Ryan","U.S. Representative",,"WI","1","03/30/12",,,,"https://www.p2012.org/romney/romney033012prwi.html",TRUE,"Rep. Paul Ryan (WI-1) 03/30/12 +",FALSE
+"2012R",2012,"R","Mitt Romney","Cynthia Lummis","U.S. Representative",,"WY","AL","11/14/11",,,,"https://www.p2012.org/romney/romney111411prwy.html",TRUE,"Rep. Cynthia Lummis (WY-AL) 11/14/11 +",FALSE
+"2012R",2012,"R","Newt Gingrich","Nathan Deal","Governor",,"GA",,"05/24/11",,,,"../gingrich/gingrich052411pr.html",TRUE,"Gov. Nathan Deal (GA) 05/24/11 +",FALSE
+"2012R",2012,"R","Newt Gingrich","Rick Perry","Governor",,"TX",,"01/19/12",,,,"https://www.p2012.org/perry/perry011912sp.html",TRUE,"Gov. Rick Perry (TX) 01/19/12 +",FALSE
+"2012R",2012,"R","Newt Gingrich","Trent Franks","U.S. Representative",,"AZ","2","01/13/12",,,,"https://www.p2012.org/gingrich/gingrich011312praz.html",TRUE,"Rep. Trent Franks (AZ-2) 01/13/12 +",FALSE
+"2012R",2012,"R","Newt Gingrich","Dan Lungren","U.S. Representative",,"CA","3",,,,,,TRUE,"Rep. Dan Lungren (CA-3)",FALSE
+"2012R",2012,"R","Newt Gingrich","David Rivera","U.S. Representative",,"FL","26",,"01/12",,,,TRUE,"Rep. David Rivera (FL-26) 01/12",FALSE
+"2012R",2012,"R","Newt Gingrich","Jack Kingston","U.S. Representative",,"GA","1","05/17/11",,,,"../gingrich/gingrich051711pr.html",TRUE,"Rep. Jack Kingston (GA-1) 05/17/11 +",FALSE
+"2012R",2012,"R","Newt Gingrich","Lynn Westmoreland","U.S. Representative",,"GA","3","12/08/11",,,,"https://www.p2012.org/gingrich/gingrich120811prga.html",TRUE,"Rep. Lynn Westmoreland (GA-3) 12/08/11 +",FALSE
+"2012R",2012,"R","Newt Gingrich","Tom Price","U.S. Representative",,"GA","6","05/13/11",,,,,TRUE,"Rep. Tom Price (GA-6) 05/13/11",FALSE
+"2012R",2012,"R","Newt Gingrich","Scott Austin","U.S. Representative",,"GA","8",,,,,,TRUE,"Rep. Scott Austin (GA-8)",FALSE
+"2012R",2012,"R","Newt Gingrich","Phil Gingrey","U.S. Representative",,"GA","11",,,,,,TRUE,"Rep. Phil Gingrey (GA-11)",FALSE
+"2012R",2012,"R","Newt Gingrich","Dan Burton","U.S. Representative",,"IN","5",,,,,,TRUE,"Rep. Dan Burton (IN-5)",FALSE
+"2012R",2012,"R","Newt Gingrich","Andy Harris","U.S. Representative",,"MD","1","11/29/11",,,,,TRUE,"Rep. Andy Harris (MD-1) 11/29/11",FALSE
+"2012R",2012,"R","Newt Gingrich","Joe Barton","U.S. Representative",,"TX","6","05/12/11",,,,,TRUE,"Rep. Joe Barton (TX-6) 05/12/11",FALSE
+"2012R",2012,"R","Newt Gingrich","Michael Burgess","U.S. Representative",,"TX","26",,,,,,TRUE,"Rep. Michael Burgess (TX-26)",FALSE
+"2012R",2012,"R","Ron Paul","Rand Paul","U.S. Senator",,"KY",,,,,,,TRUE,"Sen. Rand Paul (KY)",FALSE
+"2012R",2012,"R","Ron Paul","Tim Johnson","U.S. Representative",,"IL","15","03/13/12",,,,"https://www.p2012.org/paul/paul031312pril.html",TRUE,"Rep. Tim Johnson (IL-15) 03/13/12 +",FALSE
+"2012R",2012,"R","Ron Paul","Justin Amash","U.S. Representative",,"MI","3","09/20/11",,,,"../paul/paul092011prmi.html",TRUE,"Rep. Justin Amash (MI-3) 09/20/11 +",FALSE
+"2012R",2012,"R","Ron Paul","Walter Jones","U.S. Representative",,"NC","3",,,,,,TRUE,"Rep. Walter Jones (NC-3)",FALSE
+"2012R",2012,"R","Rick Santorum","Robert Aderholt","U.S. Representative",,"AL","4","02/24/12",,,,"https://www.p2012.org/santorum/santorum022412pral.html",TRUE,"Rep. Robert Aderholt (AL-4) 02/24/12 +",FALSE
+"2012R",2012,"R","Rick Santorum","Alan Nunnelee","U.S. Representative",,"MS","1","03/13/12",,,,"https://www.p2012.org/santorum/santorum031312prms.html",TRUE,"Rep. Alan Nunnelee (MS-1) 03/13/12 +",FALSE
+"2012R",2012,"R","Rick Santorum","Jo Ann Emerson","U.S. Representative",,"MO","8","03/10/12",,,,"https://www.p2012.org/santorum/santorum031012prmo.html",TRUE,"Rep. Jo Ann Emerson (MO-8) 03/10/12 +",FALSE
+"2012R",2012,"R","Rick Santorum","Glenn Thompson","U.S. Representative",,"PA","5","01/07/12","reported by The Hill on",,,,TRUE,"Rep. Glenn Thompson (PA-5) reported by The Hill on 01/07/12",FALSE
+"2012R",2012,"R","Rick Santorum","Tom Marino","U.S. Representative",,"PA","10","01/13/12",,,,"https://www.p2012.org/santorum/santorum011312prpa.html",TRUE,"Rep. Tom Marino (PA-10) 01/13/12 +",FALSE
+"2012R",2012,"R","Rick Santorum","Lou Barletta","U.S. Representative",,"PA","11","01/12/12","also note: rec'd vote of Gov. Robert Bentley (AL",,,"https://www.p2012.org/santorum/santorum011212prpa.html; ../santorum/santorum031312pral.html",TRUE,"Rep. Lou Barletta (PA-11) 01/12/12 + also note: rec'd vote of Gov. Robert Bentley (AL) +",FALSE
+"2012R",2012,"R","Rick Perry","Sam Brownback","Governor",,"KS",,"09/22/11",,,,"../perry/perry092211prks.html",TRUE,"Gov. Sam Brownback (KS) 09/22/11 +",FALSE
+"2012R",2012,"R","Rick Perry","Bobby Jindal","Governor",,"LA",,"09/12/11",,,,"../perry/perry091211prla.html",TRUE,"Gov. Bobby Jindal (LA) 09/12/11 +",FALSE
+"2012R",2012,"R","Rick Perry","Brian Sandoval","Governor",,"NV",,"09/13/11",,,,"../perry/perry091311prnv.html",TRUE,"Gov. Brian Sandoval (NV) 09/13/11 +",FALSE
+"2012R",2012,"R","Rick Perry","Jim Inhofe","U.S. Senator",,"OK",,"08/29/11",,,,"../perry/perry082911pr.html",TRUE,"Sen. Jim Inhofe (OK) 08/29/11 +",FALSE
+"2012R",2012,"R","Rick Perry","Mike Coffman","U.S. Representative",,"CO","6","10/17/11",,,,"../perry/perry101711prco.html",TRUE,"Rep. Mike Coffman (CO-6) 10/17/11 +",FALSE
+"2012R",2012,"R","Rick Perry","Steve Scalise","U.S. Representative",,"LA","1","08/31/11",,,,"../perry/perry083111prla.html",TRUE,"Rep. Steve Scalise (LA-1) 08/31/11 +",FALSE
+"2012R",2012,"R","Rick Perry","Candice Miller","U.S. Representative",,"MI","10","09/08/11",,,,"../perry/perry090811prmi.html",TRUE,"Rep. Candice Miller (MI-10) 09/08/11 +",FALSE
+"2012R",2012,"R","Rick Perry","Sam Graves","U.S. Representative",,"MO","6","08/14/11","reported by the Post-Dispatch on",,,,TRUE,"Rep. Sam Graves (MO-6) reported by the Post-Dispatch on 08/14/11",FALSE
+"2012R",2012,"R","Rick Perry","Mick Mulvaney","U.S. Representative",,"SC","5","09/05/11",,,,"../perry/perry090511pr.html",TRUE,"Rep. Mick Mulvaney (SC-5) 09/05/11 +",FALSE
+"2012R",2012,"R","Rick Perry","Sam Johnson","U.S. Representative",,"TX","3",,,,,,TRUE,"Rep. Sam Johnson (TX-3)",FALSE
+"2012R",2012,"R","Rick Perry","Jeb Hensarling","U.S. Representative",,"TX","5","08/25/11",,,,,TRUE,"Rep. Jeb Hensarling (TX-5) 08/25/11",FALSE
+"2012R",2012,"R","Rick Perry","John Culberson","U.S. Representative",,"TX","7","08/17/11","on ABC News Topline",,,,TRUE,"Rep. John Culberson (TX-7) on ABC News Topline 08/17/11",FALSE
+"2012R",2012,"R","Rick Perry","Michael McCaul","U.S. Representative",,"TX","10","08/12/11","reported by Roll Call on",,,,TRUE,"Rep. Michael McCaul (TX-10) reported by Roll Call on 08/12/11",FALSE
+"2012R",2012,"R","Rick Perry","Mike Conaway","U.S. Representative",,"TX","11",,,,,,TRUE,"Rep. Mike Conaway (TX-11)",FALSE
+"2012R",2012,"R","Rick Perry","Kenny Marchant","U.S. Representative",,"TX","24","09/10/11",,,,"../perry/perry091011prtx.html",TRUE,"Rep. Kenny Marchant (TX-24) 09/10/11 +",FALSE
+"2012R",2012,"R","Rick Perry","John Carter","U.S. Representative",,"TX","31",,,,,,TRUE,"Rep. John Carter (TX-31)",FALSE
+"2012R",2012,"R","Rick Perry","Pete Sessions","U.S. Representative",,"TX","32","08/25/11",,,,,TRUE,"Rep. Pete Sessions (TX-32) 08/25/11",FALSE
+"2012R",2012,"R","Michele Bachmann","Trent Franks","U.S. Representative",,"AZ","2","12/01/11",,,,"../bachmann/bachmann120111praz.html",TRUE,"Rep. Trent Franks (AZ-2) 12/01/11 +",FALSE
+"2012R",2012,"R","Herman Cain",,,,,,,,,,,FALSE,"[UNMATCHED] On Nov. 5 THEHermanCain tweeted ""Proud to announce that I've received the endorsement of .@CongressmanDan Benishek (R-MI)""",FALSE
+"2012R",2012,"R","Herman Cain",,,,,,,,,,,FALSE,"[UNMATCHED] ed. this was never confirmed.",FALSE
+"2012R",2012,"R","Tim Pawlenty","John Kline","U.S. Representative",,"MN","2","02/24/11",,,,,TRUE,"Rep. John Kline (MN-2) 02/24/11",FALSE
+"2012R",2012,"R","Tim Pawlenty","Erik Paulsen","U.S. Representative",,"MN","3",,,,,,TRUE,"Rep. Erik Paulsen (MN-3)",FALSE
+"2012R",2012,"R","Tim Pawlenty","Joe Wilson","U.S. Representative",,"SC","2","06/09/11",,,,,TRUE,"Rep. Joe Wilson (SC-2) 06/09/11",FALSE
