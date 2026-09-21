@@ -24,6 +24,7 @@ be usable in the final dataset.
 | `endorser` | string | Name of the person or group making the endorsement | Standardize name format |
 | `endorser_description` | string | Free-text description of the endorser's role, title, or basis for influence (e.g., "Governor", "Radio host", "Former Senator") | Maps directly from `description`. Not every endorser holds elected office. |
 | `endorser_state` | string | State associated with the endorser | Standardize to uppercase 2-letter postal code |
+| `district ` | numeric | District of the endorser | At-large districts coded as `0` |
 | `date` | date | Date of the endorsement | Standardize to ISO format (`YYYY-MM-DD`) |
 | `record_type` | string | `"endorsement"` or `"retraction"` | Retraction removes a previously-counted endorsement. Retractions most often occur when a candidate drops out and the endorser's support is removed from that candidate's count; they may or may not be followed by a new `"endorsement"` row for a different candidate ("switch"). See `previous_endorsee` below for linking these. |
 | `previous_endorsee` | string, nullable | For an `"endorsement"` row that follows a same-endorser retraction, the candidate this endorser previously supported | New, derived field populated during cleaning by matching an endorser's retraction to a subsequent endorsements (same endorser, same contest, nearby date). Left null for an endorser's first/only endorsement in a contest. Makes "switches" explicit and queryable without needing to infer them from paired rows at analysis time. |
@@ -65,5 +66,5 @@ tracked here so they don't get lost:
 - [ ] **`endorser_description` categorization for cross-source comparability**: since this field is free text rather than structured, decide whether a derived categorical field (e.g., isolating Governors/Senators/Representatives) is needed to compare against Source 2's narrower scope, and if so, how to parse it out of Source 1's `Description` and Source 2's `description` text consistently.
 - [ ] **Retraction-to-switch linking logic**: define the matching rule for populating `previous_endorsee` (e.g., same endorser + same contest + retraction and endorsement within N days of each other). Confirm this logic correctly distinguishes true switches (like Thurmond/Holt) from standalone withdrawals (like Snelling) rather than incorrectly pairing unrelated records.
 - [ ] **Does Source 1 include retractions at all?** Confirm whether Source 1 has any analog to Source 2's negative-count retraction rows, or whether every Source 1 row represents a standing, uncontested endorsement.
-
+- [X] **Coding at-large districts:** At-large districts are coded as `0`
 ---
