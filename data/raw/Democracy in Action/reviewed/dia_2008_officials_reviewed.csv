@@ -1,4 +1,4 @@
-contest_id,year,party,endorsee,endorser_name,endorser_description,endorser_party_note,state,district,date_raw,note,switch_direction,switch_candidate,evidence_url,parsed_ok,raw_text
+﻿contest_id,year,party,endorsee,endorser_name,endorser_description,endorser_party_note,state,district,date_raw,note,switch_direction,switch_candidate,evidence_url,parsed_ok,raw_text
 2008R,2008,R,Huckabee,Mike Rounds,Governor,,SD,,"Mar. 24, 2007",,,,,TRUE,"Gov. Mike Rounds (SD) (Mar. 24, 2007)"
 2008R,2008,R,Huckabee,Don Young,U.S. Representative,,AK,,"Feb. 23, 2007",,,,http://p2008.org/cands08/endorse/huck022307pr.html,TRUE,"U.S. Rep. Don Young (AK) (Feb. 23, 2007) +"
 2008R,2008,R,Huckabee,John Boozman,U.S. Representative,,AR,3,"Feb. 23, 2007",,,,,TRUE,"U.S. Rep. John Boozman (AR-3) (Feb. 23, 2007)"
@@ -134,7 +134,7 @@ contest_id,year,party,endorsee,endorser_name,endorser_description,endorser_party
 2008R,2008,R,Guiliani,Charlie Dent,U.S. Representative,,PA,15,"Feb. 22, 2007",,,,http://p2008.org/cands08/endorse/endcd022207.html,TRUE,"U.S. Rep. Charlie Dent (PA-15) (Feb. 22, 2007) +"
 2008R,2008,R,Guiliani,Pete Sessions,U.S. Representative,,TX,32,"Newsday, Jan. 30, 2007","announced Feb. 12, 2007",,,,TRUE,"U.S. Rep. Pete Sessions (TX-32) (Newsday, Jan. 30, 2007; announced Feb. 12, 2007)"
 2008R,2008,R,Guiliani,Dave Reichert,U.S. Representative,,WA,8,15-Jun-07,,,,,TRUE,"U.S. Rep. Dave Reichert (WA-8) (June 15, 2007)"
-2008R,2008,R,Guiliani,Luis G. Fortu�o,U.S. Representative,,PR,,2-Aug-07,,,,,TRUE,"U.S. Rep. Luis G. Fortuño (PR) (August 2, 2007)"
+2008R,2008,R,Guiliani,Luis G. Fortuño,U.S. Representative,,PR,,2-Aug-07,,,,,TRUE,"U.S. Rep. Luis G. Fortuño (PR) (August 2, 2007)"
 2008R,2008,R,F.Thompson,Thad Cochran,U.S. Senator,,MS,,"Sept. 13, 2007",,,,,TRUE,"U.S. Sen. Thad Cochran (MS) (Sept. 13, 2007)"
 2008R,2008,R,F.Thompson,Jim Inhofe,U.S. Senator,,OK,,"Oct. 10, 2007",,,,http://p2008.org/fthompson/fthompson101007pr.html,TRUE,"U.S. Sen. Jim Inhofe (OK) (Oct. 10, 2007) +"
 2008R,2008,R,F.Thompson,Lamar Alexander,U.S. Senator,,TN,,,,,,,TRUE,U.S. Sen. Lamar Alexander (TN)
