@@ -3,7 +3,7 @@
 #
 # Source page: "Endorsements by National Organizations in the 2012 Campaign"
 # Input: data/raw/Democracy in Action/dia_2012_p2012_organizations.html
-# Output: data/raw/Democracy in Action/dia_2012_organizations_extracted.csv
+# Output: data/raw/Democracy in Action/extracted/dia_2012_organizations_extracted.csv
 #
 # Much simpler structure than the officials/newspaper pages: each entry is
 # one <br>-separated line of the shape
@@ -47,7 +47,7 @@ library(tibble)
 
 # ---- Config ------------------------------------------------------------
 input_path  <- "data/raw/Democracy in Action/dia_2012_p2012_organizations.html"
-output_path <- "data/raw/Democracy in Action/dia_2012_organizations_extracted.csv"
+output_path <- "data/raw/Democracy in Action/extracted/dia_2012_organizations_extracted.csv"
 
 # ---- Helper: split one <p> node into <br>-separated lines, tokenizing
 # links first -- identical technique to the newspaper script, reused here

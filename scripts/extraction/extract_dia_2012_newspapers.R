@@ -3,7 +3,7 @@
 #
 # Source page: "Newspaper Endorsements in the 2012 Primary Campaign" (2012)
 # Input: data/raw/Democracy in Action/dia_2012_p2012_newspapers.html
-# Output: data/raw/Democracy in Action/dia_2012_newspapers_extracted.csv
+# Output: data/raw/Democracy in Action/extracted/dia_2012_newspapers_extracted.csv
 #
 # The page is organized as one <p class="blurb> block per rough section,
 # with three kinds of content mixed together as <br>-separated lines:
@@ -39,7 +39,7 @@ library(tibble)
 
 # ---- Config ------------------------------------------------------------
 input_path  <- "data/raw/Democracy in Action/dia_2012_p2012_newspapers.html"
-output_path <- "data/raw/Democracy in Action/dia_2012_newspapers_extracted.csv"
+output_path <- "data/raw/Democracy in Action/extracted/dia_2012_newspapers_extracted.csv"
 
 # ---- Helper: split one <p> node into (visible-text, evidence-url) lines ----
 #

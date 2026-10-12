@@ -4,7 +4,7 @@
 # Source page: "Endorsements by National Organizations in the 2008
 # Presidential Primaries"
 # Input: data/raw/Democracy In Action/dia_2008_p2008_organizations.html
-# Output: data/raw/Democracy In Action/dia_2008_organizations_extracted.csv
+# Output: data/raw/Democracy In Action/extracted/dia_2008_organizations_extracted.csv
 #
 # Much simpler and cleaner than the 2008 newspaper page -- one small table
 # with two columns (Democratic candidates on the left, Republican on the
@@ -47,7 +47,7 @@ library(tibble)
 
 # ---- Config ------------------------------------------------------------
 input_path  <- "data/raw/Democracy In Action/dia_2008_p2008_organizations.html"
-output_path <- "data/raw/Democracy In Action/dia_2008_organizations_extracted.csv"
+output_path <- "data/raw/Democracy In Action/extracted/dia_2008_organizations_extracted.csv"
 
 # ---- Helper: flatten the whole <body> into <br>-and-block-separated lines --
 link_token_re <- regex('<a\\s+[^>]*?href="([^"]*)"[^>]*>(.*?)</a>', dotall = TRUE)

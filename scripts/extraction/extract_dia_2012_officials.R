@@ -3,7 +3,7 @@
 #
 # Source page: Democracy in Action / p2012.org "National Endorsements" page.
 # Input: data/raw/Democracy in Action/dia_2012_p2012_org.html
-# Output: data/raw/Democracy in Action/dia_2012_officials_extracted.csv
+# Output: data/raw/Democracy in Action/extracted/dia_2012_officials_extracted.csv
 #
 # This page contains four tables:
 #   1. The candidate-organized table (Romney in td[1]; Gingrich, Paul,
@@ -36,7 +36,7 @@ library(tibble)
 
 # ---- Config ----------------------------------------------------------------
 input_path  <- "data/raw/Democracy in Action/dia_2012_p2012_org.html"
-output_path <- "data/raw/Democracy in Action/dia_2012_officials_extracted.csv"
+output_path <- "data/raw/Democracy in Action/extracted/dia_2012_officials_extracted.csv"
 
 # ---- Helper functions -------------------------------------------------------
 
