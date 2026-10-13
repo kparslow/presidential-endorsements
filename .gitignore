@@ -11,3 +11,6 @@ data/raw/Prez primary endorsements 1972-2012.xlsx
 
 # Hidden working notes
 docs/hidden/
+
+# Excel lock files
+~$*
