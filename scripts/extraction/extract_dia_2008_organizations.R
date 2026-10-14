@@ -3,7 +3,7 @@
 #
 # Source page: "Endorsements by National Organizations in the 2008
 # Presidential Primaries"
-# Input: data/raw/Democracy in Action/dia_2008_p2008_organizations.html
+# Input: data/raw/Democracy in Action/dia_2008_organizations.html
 # Output: data/raw/Democracy in Action/extracted/dia_2008_organizations_extracted.csv
 #
 # Much simpler and cleaner than the 2008 newspaper page -- one small table
@@ -46,7 +46,7 @@ library(purrr)
 library(tibble)
 
 # ---- Config ------------------------------------------------------------
-input_path  <- "data/raw/Democracy in Action/dia_2008_p2008_organizations.html"
+input_path  <- "data/raw/Democracy in Action/dia_2008_organizations.html"
 output_path <- "data/raw/Democracy in Action/extracted/dia_2008_organizations_extracted.csv"
 
 # ---- Helper: flatten the whole <body> into <br>-and-block-separated lines --

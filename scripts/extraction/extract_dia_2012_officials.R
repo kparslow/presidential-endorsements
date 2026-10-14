@@ -2,7 +2,7 @@
 # Extract officials' endorsements from Democracy in Action (2012)
 #
 # Source page: Democracy in Action / p2012.org "National Endorsements" page.
-# Input: data/raw/Democracy in Action/dia_2012_p2012_org.html
+# Input: data/raw/Democracy in Action/dia_2012_officials.html
 # Output: data/raw/Democracy in Action/extracted/dia_2012_officials_extracted.csv
 #
 # This page contains four tables:
@@ -35,7 +35,7 @@ library(purrr)
 library(tibble)
 
 # ---- Config ----------------------------------------------------------------
-input_path  <- "data/raw/Democracy in Action/dia_2012_p2012_org.html"
+input_path  <- "data/raw/Democracy in Action/dia_2012_officials.html"
 output_path <- "data/raw/Democracy in Action/extracted/dia_2012_officials_extracted.csv"
 
 # ---- Helper functions -------------------------------------------------------

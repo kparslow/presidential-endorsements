@@ -2,7 +2,7 @@
 # Extract national-organization endorsements from Democracy in Action (2012)
 #
 # Source page: "Endorsements by National Organizations in the 2012 Campaign"
-# Input: data/raw/Democracy in Action/dia_2012_p2012_organizations.html
+# Input: data/raw/Democracy in Action/dia_2012_organizations.html
 # Output: data/raw/Democracy in Action/extracted/dia_2012_organizations_extracted.csv
 #
 # Much simpler structure than the officials/newspaper pages: each entry is
@@ -46,7 +46,7 @@ library(purrr)
 library(tibble)
 
 # ---- Config ------------------------------------------------------------
-input_path  <- "data/raw/Democracy in Action/dia_2012_p2012_organizations.html"
+input_path  <- "data/raw/Democracy in Action/dia_2012_organizations.html"
 output_path <- "data/raw/Democracy in Action/extracted/dia_2012_organizations_extracted.csv"
 
 # ---- Helper: split one <p> node into <br>-separated lines, tokenizing

@@ -3,7 +3,7 @@
 #
 # Source page: "Endorsements by Newspapers and Magazines in the 2008 Primary
 # Campaign"
-# Input: data/raw/Democracy in Action/dia_2008_p2008_newspapers.html
+# Input: data/raw/Democracy in Action/dia_2008_newspapers.html
 # Output: data/raw/Democracy in Action/extracted/dia_2008_newspapers_extracted.csv
 #
 # This page is considerably messier than the 2012 sources: 2008-era tag soup
@@ -58,7 +58,7 @@ library(purrr)
 library(tibble)
 
 # ---- Config ------------------------------------------------------------
-input_path  <- "data/raw/Democracy in Action/dia_2008_p2008_newspapers.html"
+input_path  <- "data/raw/Democracy in Action/dia_2008_newspapers.html"
 output_path <- "data/raw/Democracy in Action/extracted/dia_2008_newspapers_extracted.csv"
 
 # ---- Helper: flatten the whole <body> into <br>-and-block-separated lines --

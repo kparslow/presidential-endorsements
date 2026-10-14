@@ -2,7 +2,7 @@
 # Extract newspaper endorsements from Democracy in Action (2012)
 #
 # Source page: "Newspaper Endorsements in the 2012 Primary Campaign" (2012)
-# Input: data/raw/Democracy in Action/dia_2012_p2012_newspapers.html
+# Input: data/raw/Democracy in Action/dia_2012_newspaper.html
 # Output: data/raw/Democracy in Action/extracted/dia_2012_newspapers_extracted.csv
 #
 # The page is organized as one <p class="blurb> block per rough section,
@@ -38,7 +38,7 @@ library(purrr)
 library(tibble)
 
 # ---- Config ------------------------------------------------------------
-input_path  <- "data/raw/Democracy in Action/dia_2012_p2012_newspapers.html"
+input_path  <- "data/raw/Democracy in Action/dia_2012_newspapers.html"
 output_path <- "data/raw/Democracy in Action/extracted/dia_2012_newspapers_extracted.csv"
 
 # ---- Helper: split one <p> node into (visible-text, evidence-url) lines ----
