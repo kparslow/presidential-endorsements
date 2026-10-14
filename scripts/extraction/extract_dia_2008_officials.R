@@ -2,8 +2,8 @@
 # Extract officials' endorsements from Democracy in Action (2008)
 #
 # Source page: "Endorsements by Congressmen, Senators, and Governors" (2008)
-# Input: data/raw/Democracy In Action/dia_2008_p2008_org.html
-# Output: data/raw/Democracy In Action/extracted/dia_2008_officials_extracted.csv
+# Input: data/raw/Democracy in Action/dia_2008_p2008_org.html
+# Output: data/raw/Democracy in Action/extracted/dia_2008_officials_extracted.csv
 #
 # This page lists officials (Governors/Senators/Representatives) who endorsed
 # a 2008 presidential candidate, grouped by party then by candidate. Each
@@ -30,8 +30,8 @@ library(purrr)         # check that removing this doesn't break anything
 library(tibble)       # builds rows of extracted data
 
 # ---- Config ----------------------------------------------------------------
-input_path <- "data/raw/Democracy In Action/dia_2008_p2008_org.html"
-output_path <- "data/raw/Democracy In Action/extracted/dia_2008_officials_extracted.csv"
+input_path <- "data/raw/Democracy in Action/dia_2008_p2008_org.html"
+output_path <- "data/raw/Democracy in Action/extracted/dia_2008_officials_extracted.csv"
 
 # ---- Helper functions ------------------------------------------------------
 
