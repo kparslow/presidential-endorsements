@@ -212,8 +212,165 @@ with attention to name-formatting differences between sources.
   Rakich via personal correspondence and its terms for redistribution were not specified.
   
 ---
+ 
+## Source 3: Democracy in Action — Endorsement Pages
+ 
+**Acquisition Status:** File acquired (HTML pages saved directly from the website)
+**Processing Status:** Extracted — manual review in progress (see per-file table below)
+ 
+**Format:** .html (one saved web page per election cycle and endorser type)
+**File name(s):** `data/raw/Democracy in Action/dia_<year>_<type>.html` (11 files;
+see table below). Extracted output: `data/raw/Democracy in Action/extracted/*_extracted.csv`.
+Text-safe review copies: `data/raw/Democracy in Action/review/*_review.xlsx`.
+**Author(s):** Eric M. Appleman
+**Provider/origin:** Democracy in Action (p2004.org, p2008.org, p2012.org, p2016.org,
+democracyinaction.us), a site documenting U.S. presidential campaigns
+**Date acquired:** September–October 2026 (first committed 2026-09-10 to 2026-10-14;
+see per-file table)
+**Date range covered:** the 2004–2020 nomination cycles: 2004D, 2008D, 2008R,
+2012D (organizations page only; Obama was unopposed), 2012R, 2016D, 2016R and
+2020D (see per-file table for each page's cut-off date)
+**Unit of observation:** Endorsement event-level after extraction (one row per
+endorser–candidate pair). The raw pages are curated lists, not datasets.
+ 
+### Files
+ 
+| Raw file | Page title | Page dated | Extraction script | Extracted rows | First committed | Review status |
+| --- | --- | --- | --- | --- | --- | --- |
+| `dia_2004_labor.html` | Labor Endorsements in the Race for the 2004 Dem. Nomination | through Feb. 19, 2004 (AFL-CIO endorsement of Kerry) | `extract_dia_2004_labor.R` | 78 | 2026-10-14 | not started |
+| `dia_2008_labor.html` | Labor Endorsements in the 2008 Primary Campaigns | not stated (latest entry May 21, 2008) | `extract_dia_2008_labor.R` | 73 | 2026-10-12 | not started |
+| `dia_2008_newspapers.html` | Endorsements by Newspapers and Magazines in the 2008 Primary Campaign | updated May 5, 2008 | `extract_dia_2008_newspapers.R` | 350 | 2026-09-17 | [confirm] |
+| `dia_2008_officials.html` | Endorsements by Congressmen Senators and Governors--Feb. 5 Edition | last revised Feb. 27, 2008 | `extract_dia_2008_officials.R` | 386 | 2026-09-10 | [confirm] |
+| `dia_2008_organizations.html` | Endorsements by National Organizations | not stated | `extract_dia_2008_organizations.R` | 15 | 2026-09-17 | [confirm] |
+| `dia_2012_newspapers.html` | Endorsements by Newspapers and Magazines the 2012 Presidential Primary Campaign | updated March 31, 2012 | `extract_dia_2012_newspapers.R` | 58 | 2026-09-17 | [confirm] |
+| `dia_2012_officials.html` | National Endorsements 2012 Republican Presidential Candidates | not stated | `extract_dia_2012_officials.R` | 157 | 2026-09-10 | [confirm] |
+| `dia_2012_organizations.html` | Endorsements by National Organizations in the 2012 Presidential Campaign | updated April 7, 2013 | `extract_dia_2012_organizations.R` | 42 | 2026-09-17 | [confirm] |
+| `dia_2016_officials.html` | Endorsements by Federal and Statewide Elected Officials in the 2016 Republican Presidential Primary | updated January 13, 2016 | `extract_dia_2016_officials.R` | 143 | 2026-10-14 | not started |
+| `dia_2016_organizations.html` | Endorsements by National Organizations in the 2016 Presidential Campaign | updated September 26, 2016 | `extract_dia_2016_organizations.R` | 77 | 2026-10-14 | not started |
+| `dia_2020_officials.html` | Endorsements by Federal and Statewide Elected Officials in the 2020 Democratic Presidential Primary | updated January 31, 2020 | `extract_dia_2020_officials.R` | 156 | 2026-10-14 | not started |
+ 
+Extracted row counts include rows flagged for review (`parsed_ok = FALSE`, e.g.
+`[PAGE NOTE]` and `[UNMATCHED]` rows), so they are not final endorsement counts.
+ 
+### Structure
+ 
+- **No common structure across pages.** Each page has its own HTML layout, so each
+  file has its own extraction script in `scripts/extraction/`. The layouts fall
+  into four types:
+  - **Line lists** (organizations, newspapers): one endorsement per `<br>`-separated
+    line under a candidate heading.
+  - **Column-aligned tables** (2016 and 2020 officials): names, dates and links are
+    in separate table cells, lined up line by line; blank lines are spacers that
+    keep the columns aligned.
+  - **Narrative blocks** (2004 and 2008 labor): one table cell or paragraph per
+    union, with the endorsement date written inside prose.
+  - **Free text between tables** (2020 statewide officials, page notes).
+- **Extracted output columns.** All 11 CSVs share 16 core columns: `contest_id`,
+  `year`, `party`, `endorsee`, `endorser_name`, `endorser_description`,
+  `endorser_party_note`, `state`, `district`, `date_raw`, `note`,
+  `switch_direction`, `switch_candidate`, `evidence_url`, `parsed_ok`, `raw_text`.
+  The five files extracted in Oct. 2026 also have `record_type`, plus
+  page-specific columns at the end (e.g. `section`, `all_dates`, `table_column`,
+  `line_in_cell`, `date_ditto`, `endorsee_raw`). Each script's header comment
+  documents its extra columns.
+- **`raw_text`** keeps the source line (or, for column-aligned tables,
+  `name | date | link`) so every row can be checked against the page.
+- **Cross-reference grids** at the bottom of the 2012, 2016 and 2020 officials
+  pages (all governors / senators / House members by state) have no dates or
+  links and are not extracted. They could serve as a completeness check later.
+- **Encoding:** 2004 and 2008 pages are ISO-8859-1; 2012 onward are UTF-8. Each
+  script reads its page with the matching encoding and writes UTF-8.
+### Known Issues
+ 
+1. **Pages are snapshots, not complete records.** Each page stops at its own
+   cut-off date (see table). Endorsements made after that date are missing, e.g.
+   the 2016 officials page covers only endorsements through Jan. 13, 2016, and the
+   2020 page only through Jan. 31, 2020.
+2. **Republican-only and Democratic-only officials pages.** 2012 and 2016 officials
+   cover only the Republican primary; 2020 officials only the Democratic primary.
+   There is no 2016D or 2020R officials page, and labor pages exist only for 2004
+   and 2008.
+3. **General-election endorsements are mixed in.** The 2016 organizations page lists
+   endorsements for the nominees (Clinton, Trump) dated after the primaries were
+   settled. Kept as-is; a post-primary indicator is to be added later.
+4. **Inconsistent date formats:** `MM/DD/YY` (2012 onward), `Month D, YYYY` and
+   `Mon. D, YYYY` (2004, 2008), month-only dates (`May 2007`, `April 2007`), ditto
+   marks (`"`), `?`, and text such as `from beg.`. Typos in the source include
+   `12/13.19` and a 2008 Notes entry dated `Mar. 17, 2007` for a 2008 event.
+   `date_raw` is kept as written; parsing to ISO dates happens at cleaning.
+5. **Several dates per entry (labor pages).** Narratives mention founding dates,
+   earlier endorsements and forum dates. The scripts choose the date nearest the
+   candidate's name and keep every date found in `all_dates`.
+6. **Misaligned columns (2016 officials).** In Bush's statewide column, one date
+   line is missing a line break, shifting every date below it. Corrected by a
+   hand-coded table in the script (`date_hand_corrected = TRUE` on 4 rows).
+7. **Dates shared by a group.** Some groups are listed under one date (Kasich's Ohio
+   statewide officials, 2016; Booker's New Jersey House delegation, 2020;
+   comma-separated statewide lists, 2020). The scripts copy the date to each
+   member and say so in `note`.
+8. **Rows covering several endorsers** (e.g. "Ten SEIU State Councils", "SEIU Locals
+   1199 and 32BJ", TCU inside the IAM cell, three UFCW locals in one line) are
+   split into one row per endorser in the 2004 and 2008 labor extractions.
+9. **Switches and retractions are written in prose** ("Originally endorsed Sen.
+   Edwards", "Withdrew endorsement on February 7, 2004", a "second endorsements"
+   legend on the 2020 page). Captured in `switch_direction` / `switch_candidate`
+   and, for AFSCME 2004, a separate `record_type = "retraction"` row.
+10. **Non-endorsements are listed alongside endorsements** ("No National
+    Endorsement", "No Endorsement, At Least for Now", the 2008 labor Notes,
+    "favorite son" resolutions). Excluded by the 2008 labor and 2016 organizations
+    scripts.
+11. **Source errors kept as written**, e.g. "Rep. Marco Rubio (UT-3)" (2016; UT-3 was
+    Jason Chaffetz), California House seats written as `CD-41` (2012), several
+    organization homepage links on the 2008 labor page pointing to the wrong
+    union, and press-release file names whose dates don't match the displayed date
+    (2016 organizations).
+12. **Inconsistent conventions between older and newer extractions.** The six files
+    extracted in Sept. 2026 keep candidate names as written on the page
+    (`CLINTON`, `Clinton`, `Mitt Romney`) and at-large districts as written (`AL`),
+    and have no `record_type` column. The five files extracted in Oct. 2026 use
+    standardized full names (page heading kept in `endorsee_raw` /
+    `section_heading`), code at-large districts as `0`, and include `record_type`.
+### Cleaning / Transformation Steps Needed
+ 
+- [ ] Finish manual review of each `*_review.xlsx` file in Excel (resolve
+      `parsed_ok = FALSE` rows; delete or recode `[PAGE NOTE]` rows)
+- [ ] Bring the six Sept. 2026 extractions in line with the Oct. 2026 conventions:
+      standardized candidate names, at-large districts as `0`, `record_type`
+- [ ] Parse `date_raw` to ISO dates (`YYYY-MM-DD`); decide how to code month-only,
+      `?` and other non-date values
+- [ ] Map `switch_direction` / `switch_candidate` to the final schema's
+      `previous_endorsee` and retraction logic
+- [ ] Rename columns to the final schema (`endorser_name` → `endorser`,
+      `state` → `endorser_state`, `date_raw` → `date`, `evidence_url` →
+      `endorsement_evidence`); set `source_dataset`
+- [ ] Resolve relative `evidence_url` links (e.g. `usw060816pr.html`) to full URLs
+      using each page's base address
+- [ ] Add a post-primary indicator (e.g. for 2016 nominee endorsements)
+- [ ] Combine the 11 reviewed files into one Source 3 dataset
+### Join Key(s)
+ 
+- No IDs in the source. Matching to Sources 1 and 2 (2004D, 2008D/R, 2012R) will
+  need a composite key — `contest_id` + standardized `endorsee` + standardized
+  endorser name (+ `state`/`district` for officials) — with attention to name
+  formats (e.g. "Rep. Mike Rogers (AL-3)" vs. Source 1/2 formats).
+### Notes
+ 
+- Source 3's main contribution is **coverage beyond officeholders and beyond 2012**:
+  newspapers, national organizations and labor unions (2004–2016), and officials
+  for 2016R and 2020D, which Sources 1 and 2 do not cover.
+- For 2008 and 2012 officials, Source 3 overlaps with Source 2's Governor / Senator /
+  Representative scope and can serve as a cross-check.
+- Decisions applied in the Oct. 2026 extractions (non-endorsements excluded,
+  retractions coded, multi-endorser rows split, names standardized, at-large
+  districts as `0`) are recorded in each script's header comment and in the
+  commit history (`d0da47d`, `acae0bc`, `f72b9bc`).
+- Citation for this data source:
+  > Appleman, Eric M. Democracy in Action. "[page title]." [p2008.org / p2012.org /
+  > etc.]. Accessed [date].
 
-## Source 3: 
+---
+
+## Source 4: 
 
 **Acquisition Status:** 
 **Processing Status:** 
@@ -243,6 +400,4 @@ with attention to name-formatting differences between sources.
 ### Join Key(s)
 
 ### Notes
-
-
 
