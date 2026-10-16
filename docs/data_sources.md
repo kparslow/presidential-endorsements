@@ -115,7 +115,7 @@ raw data file before/during inspection.
 ## Source 2: FiveThirtyEight Presidential Primary Endorsements Data
 
 **Acquisition Status:** File acquired (shared directly by source)
-**Processing Status:** Inspected
+**Processing Status:** Inspected; merge and weight decisions recorded (2026-10-16)
 
 **Format:** .xlsx
 **File name(s):** `data/raw/Prez primary endorsements 1972-2012.xlsx`
@@ -146,15 +146,15 @@ contests from 1972 to 2012
 
 ### Known Issues
 
-1. **Substantial contest overlap with Source, much of it same-provenance**: 2,097
+1. **Substantial contest overlap with Source 1, much of it same-provenance**: 2,097
 of 3,422 rows (61%) fall within Source 1's contest range (1980-2004). Of those
 overlapping rows, 1,408 (67%) explicitly cite "Marty Cohen (The Party Decides)"
 as their source. Critically, **Source 2 only includes endorsements from Governors, U.S. Senators, and U.S. Representatives**,
 which is a narrower scope than Source 1. This means that for the 1980-2004 overlap period,
-Source 2 is primarily a subset of Source 1, rather than independent or additive data. Practically,
-this simplifies the merge decision (see Notes) but means Source 2 should not be treated
-as adding new endorsement coverage for those years. Its main value there is as a cross-check,
-not a supplement.
+Source 2 is primarily a subset of Source 1, rather than independent or additive data. Under
+the merge decision (see Notes), overlapping rows are merged with Source 1 by the Source
+Precedence rule in `docs/final_schema.md`: rows that match Source 1 collapse into one row,
+and Source 2 rows with no Source 1 match are kept.
 2. **Contests unique to Source 2:** 1972D, 1976D, 1976R, 2008D, 2008R, and 2012R
 do not appear in Source 1. Notable, **1972D, 1976D, and 1976R may fill the gap** left
 by the "missing" 1972-1976 dataset referenced in Source 1's codebook.
@@ -163,26 +163,32 @@ by the "missing" 1972-1976 dataset referenced in Source 1's codebook.
 `"Northern Marina Islands"` (also likely misspelled), alongside the standard abbreviation
 `CNMI` used elsewhere. Needs standardization to a single consistent format.
 4. **Negative `points`/`count` values:** Values of -1, -5, -10 (points) and -1 (count)
-appear to represent a withdrawal of endorsement or opposition of a candidate. This is
-a substantively important distinction from Source 1, which does not negative code 
-opposition or withdrawn endorsements the same way. Needs clarification on how withdrawals
-should be treated relative to Source 1's schema.
+represent endorsement retractions, not opposition. They are coded as rows with
+`record_type = "retraction"` in the final schema. Whether Source 1 has any equivalent is
+still an open question in `docs/final_schema.md`.
 5. **`url` column is entirely empty** and likely safe to drop.
-6. **48 rows missing `source`** (all in 2008D/2008R)— need to find alternative mean so f
+6. **48 rows missing `source`** (all in 2008D/2008R)— need to find alternative means of
 verifying provenance of specific endorsements.
+7. **`points` uses a different weighting scale from Source 1's `Weight`.** No codebook
+documents how `points` were assigned, so they are not comparable with Source 1. Per the
+weight decision in `docs/final_schema.md`, `points` are not carried into the final dataset;
+Source 2 rows are weighted with the Party Decides system instead (see Notes).
 
 ### Cleaning / Transformation Steps Needed
 
 - [ ] Import only the "Raw data" sheet; discard/ignore "Pivot table"
-- [ ] Standardize `state` to consistent uppercase postal codes; resolve the "Northern
-    Marina Islands" / CNMI inconsistency
-- [ ] Decide how to treat negative `points`/`count` rows relative to Source 1's schema
+- [ ] Standardize `state` to consistent uppercase postal codes; recode "Northern
+    Marina Islands" and `CNMI` to `MP` (the postal code for the Northern Mariana Islands)
+- [ ] Code rows with negative `points` or `count` as `record_type = "retraction"`
+- [ ] Drop `points` after coding retractions (not carried into the final dataset)
+- [ ] Assign `weight` and `weight_category` from the Party Decides weighting system
+    (codebook Appendix B, via `data/lookups/tpd_weights.csv`), using `description`
 - [ ] Drop empty `url` column
 - [ ] Rename columns to match final schema naming convention
-- [ ] **Merge with Source 1 for 1980-2004:** since Source 2 is scoped to Governors/Senators/Reps
-    only, decide whether to (a) use Source 1 exclusively for 1980-2004 endorser types it already covers
-    and ignore Source 2's overlapping rows entirely, or (b) use Source 2 as a validation cross-check
-    against Source 1's Governor/Senator/Rep subset before finalizing data for that period.
+- [ ] **Merge with Source 1 for 1980-2004** using the Source Precedence rule in
+    `docs/final_schema.md`: match on a composite key (see Join Keys); for matched pairs keep
+    the more detailed row and list the other source in `also_in_sources`; keep Source 2 rows
+    with no Source 1 match, after checking them by hand for name-matching misses
 
 ### Join Key(s)
 - No pre-built numeric ID (unlike Source 1's `Endorsement number`/`Endorser number`).
@@ -196,20 +202,30 @@ with attention to name-formatting differences between sources.
   Cohen's "The Party Decides" data as a source. However, since Source 2 is 
   scoped only to Governor/Senator/Representative endorsers, it is best 
   understood as **a subset of Source 1 for 1980-2004**, not an independent 
-  or additive source for that period. This meaningfully simplifies the 
-  merge decision: for 1980-2004, Source 1 can likely serve as the sole 
-  authoritative source (since it already includes what Source 2 covers, 
-  plus more endorser types), with Source 2 reserved for its unique 
-  contribution — the 1972-1976 and 2008-2012 contests Source 1 lacks. 
-  Source 2's overlapping rows may still be useful as a validation check 
-  on Source 1's Governor/Senator/Representative records, but shouldn't be 
-  merged in as new data for that period.
+  or additive source for that period. Its unique contribution is the
+  1972-1976 and 2008-2012 contests Source 1 lacks.
+- **Merge decision (2026-10-16):** Source 2's 1980-2004 rows are merged with
+  Source 1 under the Source Precedence rule in `docs/final_schema.md`, the same
+  rule used for every overlap, rather than excluded or used only as a check.
+  Because Source 2 is mostly a subset, most of its overlapping rows are expected
+  to match Source 1 and collapse into Source 1's row, with Source 2 recorded in
+  `also_in_sources`. Any Source 2 row with no Source 1 match is kept, so the
+  merge also reveals where the two datasets disagree.
 - No codebook was provided with this file; column meanings were inferred 
   from header names and data inspection. `points` appears to be a weighted 
   measure similar in spirit to Source 1's `Weight`/`Adjusted weight`.
+- **Weight decision (2026-10-16):** `points` are dropped. The final dataset has
+  a single `weight` field using the Party Decides weighting system (Cohen et al.
+  codebook, Appendix B) for every source. Source 2 rows receive the Appendix B
+  weight for their `description`, and `weight_category` records the category
+  used. `points` are still used during cleaning to identify retractions.
 - The raw data file (Prez_primary_endorsements_1972-2012.xlsx) is intentionally 
   excluded from this public repository, since it was shared directly by Nathaniel 
   Rakich via personal correspondence and its terms for redistribution were not specified.
+  Per the decision in `docs/final_schema.md`, Source 2 rows are still included in the
+  final dataset; the README states that the raw file is available on request from
+  FiveThirtyEight, so replicators know the Source 2 cleaning step cannot be re-run from
+  the public repo alone.
   
 ---
  
@@ -400,4 +416,3 @@ Extracted row counts include rows flagged for review (`parsed_ok = FALSE`, e.g.
 ### Join Key(s)
 
 ### Notes
-
