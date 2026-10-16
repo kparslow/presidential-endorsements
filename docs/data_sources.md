@@ -232,7 +232,8 @@ with attention to name-formatting differences between sources.
 ## Source 3: Democracy in Action — Endorsement Pages
  
 **Acquisition Status:** File acquired (HTML pages saved directly from the website)
-**Processing Status:** Extracted — manual review in progress (see per-file table below)
+**Processing Status:** Extracted — manual review not started (unedited review copies
+committed 2026-10-13 and 2026-10-16; see per-file table below)
  
 **Format:** .html (one saved web page per election cycle and endorser type)
 **File name(s):** `data/raw/Democracy in Action/dia_<year>_<type>.html` (11 files;
