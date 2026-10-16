@@ -385,34 +385,162 @@ Extracted row counts include rows flagged for review (`parsed_ok = FALSE`, e.g.
   > etc.]. Accessed [date].
 
 ---
-
-## Source 4: 
-
-**Acquisition Status:** 
-**Processing Status:** 
-
-**Format:**
-**File name(s):**
-**Provider/origin:**
-**Date acquired:**
-**Date range covered:**
-**Unit of observation:**
-
+ 
+## Source 4: Ballotpedia — Presidential Election Endorsements
+ 
+**Acquisition Status:** File acquired (HTML pages saved directly from the website)
+**Processing Status:** Extracted — manual review not started (see per-file table below)
+ 
+**Format:** .html (one saved web page per Ballotpedia endorsements page)
+**File name(s):** `data/raw/Ballotpedia/bp_<cycle>_<page>.html` (3 files; see table below).
+Extracted output: `data/raw/Ballotpedia/extracted/*_extracted.csv`. Text-safe review
+copies: `data/raw/Ballotpedia/review/*_review.xlsx`.
+**Author(s):** Ballotpedia staff
+**Provider/origin:** Ballotpedia (ballotpedia.org), an encyclopedia of U.S. politics and
+elections published by the Lucy Burns Institute
+**Date acquired:** October 16, 2026 (pages saved and first committed 2026-10-16, commit
+`fbe281f`)
+**Date range covered:** the 2012–2024 cycles. The 2020 and 2024 pages have endorsement
+dates from 2017-07-28 to 2024-10-08; the master table (2012, 2016, 2020, 2024) has no
+dates.
+**Unit of observation:** Endorsement event-level after extraction (one row per
+endorser–candidate pair). The raw pages are curated lists and tables, not datasets.
+ 
+### Files
+ 
+| Raw file | Page title | URL | Extraction script | Extracted rows | First committed | Review status |
+| --- | --- | --- | --- | --- | --- | --- |
+| `bp_2020_crossparty.html` | Presidential election endorsements, 2020 | https://ballotpedia.org/Presidential_election_endorsements,_2020 | `extract_bp_2020_crossparty.R` | 283 | 2026-10-16 | not started |
+| `bp_2024_endorsements.html` | Presidential election endorsements, 2024 | https://ballotpedia.org/Presidential_election_endorsements,_2024 | `extract_bp_2024_endorsements.R` | 958 | 2026-10-16 | not started |
+| `bp_master_endorsements.html` | Presidential election endorsements | https://ballotpedia.org/Presidential_election_endorsements | `extract_bp_master_endorsements.R` | 2,823 | 2026-10-16 | postponed until cross-file matching (see Cleaning steps) |
+ 
+All three pages are UTF-8. No rows are flagged `parsed_ok = FALSE`.
+ 
 ### Structure
-
-- Number of rows / columns
-- Key variables
-- Any header/footer rows, merged cells, or multiple sheets to be aware of
-
+ 
+- **`bp_2020_crossparty.html`** (despite the file name, two parts, recorded in
+  `page_section`):
+  - "Noteworthy cross-party endorsements": two bulleted lists, Republicans endorsing
+    Joe Biden (32) and Democrats endorsing Donald Trump (8). General-election
+    endorsements; no endorsement dates.
+  - "Democratic primary endorsements": three tables, governors (10), U.S. senators
+    (22) and U.S. representatives (211), with columns Name | State | Party |
+    Candidate | Date (+ source link).
+- **`bp_2024_endorsements.html`** (three parts):
+  - "Noteworthy cross-party endorsements": five bulleted lists (75 items);
+    no endorsement dates.
+  - "General endorsements from noteworthy officeholders": Harris table (291 rows)
+    and Trump table (322 rows). Despite the section name, many Trump rows are dated
+    during the primary (from Nov. 2022).
+  - "Republican primary endorsements": tables by office (governors 21, U.S. senators
+    38, U.S. representatives 171) and one table per withdrawn candidate (DeSantis 17,
+    Burgum 3, Haley 13, Pence 4, Ramaswamy 1, Scott 2).
+- **`bp_master_endorsements.html`**: Ballotpedia's master table of every presidential
+  endorsement it tracks, one sortable table with columns Endorser | Endorsee (+ source
+  link and the candidate's party labels) | Election | Stage | Outcome. 2,823 rows:
+  2012 (853), 2016 (673), 2020 (495), 2024 (802).
+- **Extracted output columns.** All three CSVs share the 16 core columns used for
+  Democracy in Action (`contest_id`, `year`, `party`, `endorsee`, `endorser_name`,
+  `endorser_description`, `endorser_party_note`, `state`, `district`, `date_raw`,
+  `note`, `switch_direction`, `switch_candidate`, `evidence_url`, `parsed_ok`,
+  `raw_text`) plus `record_type` and `endorsee_raw`. Page-specific columns:
+  - 2020 and 2024 pages: `page_section`, `source_table`, `endorser_url`, `citation`,
+    `source_date`; 2024 also has `duplicate_in_page`.
+  - Master table: `endorsee_party_label`, `endorser_url`, `election_raw`, `stage`,
+    `outcome`, `multiple_endorsees_same_cycle`.
+- **Conventions** follow the Oct. 2026 Democracy in Action extractions: `party` and
+  `contest_id` are the candidate's party; the endorser's party is in
+  `endorser_party_note`; candidate names are standardized (page form kept in
+  `endorsee_raw`); `record_type = "endorsement"` on every row.
 ### Known Issues
-
-- Missing values
-- Inconsistent formatting
-- Duplicates
-- Anything requiring manual review in Excel before scripting
-
+ 
+1. **The master table has no dates, offices, states or endorser party.**
+   `date_raw`, `endorser_description`, `state` and `endorser_party_note` are blank for
+   all 2,823 rows. Without dates, a switch cannot be told apart from a dual
+   endorsement; 362 rows are flagged `multiple_endorsees_same_cycle = TRUE`.
+2. **Heavy overlap between pages and with other sources.** The master table's 2020
+   and 2024 rows largely repeat the two cycle pages, which have dates and offices. Its
+   2012 and 2016 rows overlap Democracy in Action. `endorser_url` (the endorser's
+   Ballotpedia page) is the best join key between Ballotpedia files; it is blank for
+   19 rows (2020), 36 (2024) and 22 (master).
+3. **Duplicates within the 2024 page.** The same endorsement often appears in more
+   than one table (e.g. in both the Trump table and the senators table): 460 rows are
+   flagged `duplicate_in_page = TRUE`.
+4. **General-election and cross-party endorsements are mixed in.** Cross-party lists
+   (40 rows in 2020, 75 in 2024), the 2024 general tables (613 rows) and master rows
+   with `stage = "General"` (241). Per `docs/final_schema.md`, these are kept and
+   flagged with `post_primary`.
+5. **Non-major-party contests.** The master table has Gary Johnson (Libertarian)
+   rows: `2012L` (3) and `2016L` (10). Per `docs/final_schema.md`, these are dropped.
+6. **Placeholder dates in the 2024 page.** Nine rows (7 Harris, 2 Trump, all in the
+   general tables) show "October 16, 2026", the date the page was saved, in the Date
+   column. Ballotpedia appears to show the current date where no endorsement date was
+   entered. These are not endorsement dates and must be treated as missing.
+7. **No endorsement dates for list items.** The cross-party list items (115 rows)
+   have only a footnote citation. The citation is kept in `citation` and its first
+   date in `source_date`; `date_raw` is blank. Per `docs/final_schema.md`,
+   `source_date` may stand in, with `date_precision = "source"`.
+8. **Missing endorser detail.**
+   - The 2024 general tables (613 rows) give name, state and party only, with no
+     office or title, so `endorser_description` is blank. These rows cannot be
+     assigned an `endorser_type` or Appendix B `weight` until a description is added.
+   - `state` is blank for 92 rows in 2024 (91 in the Harris table) and 12 in 2020.
+   - No table gives district numbers; `district` is blank throughout.
+9. **Switches are inferred, not stated.** Ballotpedia lists an endorser once per
+   candidate endorsed. Within each table, rows after an endorser's first are coded as
+   switches (`switch_direction = "from"`): 50 rows in 2020, 8 in 2024. These need
+   confirming in review.
+10. **Evidence links need cleaning.** `evidence_url` holds "source not available"
+    (21 rows in 2024, 34 in master), "N/A" (2 in master), and in a few rows a URL
+    wrapped in HTML paragraph markup (3 in 2020, 9 in master).
+11. **Source errors kept as written**, e.g. "Harbors Mayor Chris Swanson" (the town
+    is Two Harbors, MN; no state given), blank State cells for delegates (e.g. Stacey
+    Plaskett, USVI) and for Kamala Harris as a senator. List-item states written as
+    "Ill.", "Penn.", "Texas" are converted to postal codes, with the original kept in
+    `raw_text`.
+12. **`stage` and `outcome` describe the candidate, not the endorser.** `outcome` is
+    the candidate's result (e.g. "Won General", "Withdrew in Convention"); `stage` is
+    "Primary", "General", "Primary, General" or blank.
 ### Cleaning / Transformation Steps Needed
-
+ 
+- [ ] Review `bp_2020_crossparty_review.xlsx` and `bp_2024_endorsements_review.xlsx`
+      in Excel: confirm inferred switches; fill blank states where the page allows
+- [ ] Review `bp_master_endorsements_review.xlsx` only after cross-file matching,
+      limited to rows with no match in another file
+- [ ] Drop `2012L` and `2016L` rows
+- [ ] Keep one copy of each `duplicate_in_page` group (2024)
+- [ ] Treat the nine "October 16, 2026" dates as missing
+- [ ] Parse `date_raw` (`Month D, YYYY`) to ISO dates; use `source_date` for list items
+      with `date_precision = "source"`
+- [ ] Set `post_primary` from `page_section`, `stage` and `date`
+- [ ] Add endorser descriptions for the 613 rows in the 2024 general tables (from
+      matching rows in other tables or files, or the endorser's Ballotpedia page), so
+      `endorser_type` and `weight` can be assigned
+- [ ] Clean `evidence_url`: strip HTML markup; recode "source not available" and
+      "N/A" to `NA`
+- [ ] Rename columns to the final schema (`endorser_name` → `endorser`, `state` →
+      `endorser_state`, `evidence_url` → `endorsement_evidence`); set `source_dataset`
+      (e.g. `"Ballotpedia 2024"`)
+- [ ] Match master-table rows to the 2020 and 2024 pages, then to other sources, using
+      the Source Precedence rule in `docs/final_schema.md`
 ### Join Key(s)
-
+ 
+- Between Ballotpedia files: `endorser_url` + `endorsee` + `contest_id`.
+- With other sources: a composite key of `contest_id` + standardized `endorsee` +
+  standardized endorser name (+ `state` for officials). No district numbers are
+  available to help match House members.
 ### Notes
+ 
+- Source 4's main contribution is **coverage after Democracy in Action's cut-off
+  dates and for 2024**: the full 2020 Democratic primary for governors, senators and
+  representatives (DiA's 2020 page stops at Jan. 31, 2020), the 2024 Republican
+  primary, and 2024 general-election endorsements.
+- The master table adds 2012 and 2016 endorsements, but without dates or offices, so
+  its main use for those cycles is as a cross-check on Democracy in Action.
+- Extraction decisions (sections kept, inferred switches, standardized candidate
+  names, flags for duplicates and multiple endorsees) are recorded in each script's
+  header comment.
+- Citation for this data source:
+  > Ballotpedia. "[page title]." https://ballotpedia.org/[page]. Accessed
+  > October 16, 2026.
+ 
