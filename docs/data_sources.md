@@ -413,7 +413,7 @@ endorser–candidate pair). The raw pages are curated lists and tables, not data
 | --- | --- | --- | --- | --- | --- | --- |
 | `bp_2020_crossparty.html` | Presidential election endorsements, 2020 | https://ballotpedia.org/Presidential_election_endorsements,_2020 | `extract_bp_2020_crossparty.R` | 283 | 2026-10-16 | not started |
 | `bp_2024_endorsements.html` | Presidential election endorsements, 2024 | https://ballotpedia.org/Presidential_election_endorsements,_2024 | `extract_bp_2024_endorsements.R` | 958 | 2026-10-16 | not started |
-| `bp_master_endorsements.html` | Presidential election endorsements | https://ballotpedia.org/Presidential_election_endorsements | `extract_bp_master_endorsements.R` | 2,823 | 2026-10-16 | postponed until cross-file matching (see Cleaning steps) |
+| `bp_master_endorsements.html` | Presidential election endorsements | https://ballotpedia.org/Presidential_election_endorsements | `extract_bp_master_endorsements.R` | 2,823 | 2026-10-16 | not started (sample check; see Cleaning steps) |
  
 All three pages are UTF-8. No rows are flagged `parsed_ok = FALSE`.
  
@@ -505,9 +505,12 @@ All three pages are UTF-8. No rows are flagged `parsed_ok = FALSE`.
 ### Cleaning / Transformation Steps Needed
  
 - [ ] Review `bp_2020_crossparty_review.xlsx` and `bp_2024_endorsements_review.xlsx`
-      in Excel: confirm inferred switches; fill blank states where the page allows
-- [ ] Review `bp_master_endorsements_review.xlsx` only after cross-file matching,
-      limited to rows with no match in another file
+      in Excel against the pages: check that each row matches the page and that the
+      inferred switches are correct. Cells blank on the page stay blank in review.
+- [ ] Review `bp_master_endorsements_review.xlsx` by sample: check a random sample of
+      rows (e.g. 100, fixed seed) plus every row with a blank or unusual value against
+      the page; widen the check if the sample turns up extraction errors
+- [ ] Fill blank states from other tables or files during cleaning (not in review)
 - [ ] Drop `2012L` and `2016L` rows
 - [ ] Keep one copy of each `duplicate_in_page` group (2024)
 - [ ] Treat the nine "October 16, 2026" dates as missing
@@ -544,4 +547,3 @@ All three pages are UTF-8. No rows are flagged `parsed_ok = FALSE`.
 - Citation for this data source:
   > Ballotpedia. "[page title]." https://ballotpedia.org/[page]. Accessed
   > October 16, 2026.
- 
