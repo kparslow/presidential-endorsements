@@ -18,6 +18,8 @@
 #   3. A row_id column records each row's position in the extracted file.
 #      It stays attached to the row even after rows are deleted or sorted,
 #      so edits can always be traced back to the extracted data.
+#   4. Empty review_action and review_note columns follow row_id, for
+#      recording review decisions (see docs/review_protocol.md).
 #
 # Safety: an existing review copy is never overwritten unless
 #         overwrite = TRUE is set below. Review copies hold manual work.
@@ -54,7 +56,10 @@ make_review_copy <- function(csv_path, review_dir) {
                   locale = locale(encoding = "UTF-8"),
                   show_col_types = FALSE)
   
-  dat <- data.frame(row_id = as.character(seq_len(nrow(dat))), dat,
+  dat <- data.frame(row_id        = as.character(seq_len(nrow(dat))),
+                    review_action = "",
+                    review_note   = "",
+                    dat,
                     check.names = FALSE, stringsAsFactors = FALSE)
   
   wb <- createWorkbook()
@@ -80,6 +85,8 @@ make_review_copy <- function(csv_path, review_dir) {
     min(max(longest + 2, 8), 40)
   }, numeric(1))
   widths[names(dat) == "raw_text"] <- 80
+  widths[names(dat) == "review_action"] <- 14
+  widths[names(dat) == "review_note"]   <- 40
   setColWidths(wb, "review", cols = 1:ncol(dat), widths = widths)
   
   saveWorkbook(wb, out_path, overwrite = overwrite)
