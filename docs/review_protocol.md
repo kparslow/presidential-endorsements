@@ -56,7 +56,10 @@ means the extraction missed or duplicated entries.
    it and explain in `review_note`. Corrections of source errors happen in R,
    where they are documented in code.
 2. **Blank on the page stays blank.** Do not fill a value from memory or from
-   another source, even if it is known.
+   another source, even if it is known. Exception: when a page groups entries 
+   under state headings, state may be filled from the heading, unless the entry 
+   gives its own state. Use review_action = edited and a review_note naming the 
+   source of the value.
 3. **Keep values as the page writes them.** Dates stay as written in `date_raw`
    (e.g. `Mar. 4, 2008`, `"` for a ditto mark); names keep the page's spelling.
 4. **Never edit `row_id` or `raw_text`.** `row_id` links each row to the
