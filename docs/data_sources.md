@@ -259,7 +259,7 @@ endorser–candidate pair). The raw pages are curated lists, not datasets.
 | `dia_2008_newspapers.html` | Endorsements by Newspapers and Magazines in the 2008 Primary Campaign | updated May 5, 2008 | `extract_dia_2008_newspapers.R` | 350 | 2026-09-17 | not started |
 | `dia_2008_officials.html` | Endorsements by Congressmen Senators and Governors--Feb. 5 Edition | last revised Feb. 27, 2008 | `extract_dia_2008_officials.R` | 386 | 2026-09-10 | not started |
 | `dia_2008_organizations.html` | Endorsements by National Organizations | not stated | `extract_dia_2008_organizations.R` | 15 | 2026-09-17 | complete |
-| `dia_2012_newspapers.html` | Endorsements by Newspapers and Magazines the 2012 Presidential Primary Campaign | updated March 31, 2012 | `extract_dia_2012_newspapers.R` | 58 | 2026-09-17 | not started |
+| `dia_2012_newspapers.html` | Endorsements by Newspapers and Magazines the 2012 Presidential Primary Campaign | updated March 31, 2012 | `extract_dia_2012_newspapers.R` | 58 | 2026-09-17 | complete |
 | `dia_2012_officials.html` | National Endorsements 2012 Republican Presidential Candidates | not stated | `extract_dia_2012_officials.R` | 157 | 2026-09-10 | not started |
 | `dia_2012_organizations.html` | Endorsements by National Organizations in the 2012 Presidential Campaign | updated April 7, 2013 | `extract_dia_2012_organizations.R` | 42 | 2026-09-17 | complete |
 | `dia_2016_officials.html` | Endorsements by Federal and Statewide Elected Officials in the 2016 Republican Presidential Primary | updated January 13, 2016 | `extract_dia_2016_officials.R` | 143 | 2026-10-14 | not started |
