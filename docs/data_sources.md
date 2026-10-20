@@ -255,7 +255,7 @@ endorser–candidate pair). The raw pages are curated lists, not datasets.
 | Raw file | Page title | Page dated | Extraction script | Extracted rows | First committed | Review status |
 | --- | --- | --- | --- | --- | --- | --- |
 | `dia_2004_labor.html` | Labor Endorsements in the Race for the 2004 Dem. Nomination | through Feb. 19, 2004 (AFL-CIO endorsement of Kerry) | `extract_dia_2004_labor.R` | 78 | 2026-10-14 | not started |
-| `dia_2008_labor.html` | Labor Endorsements in the 2008 Primary Campaigns | not stated (latest entry May 21, 2008) | `extract_dia_2008_labor.R` | 73 | 2026-10-12 | not started |
+| `dia_2008_labor.html` | Labor Endorsements in the 2008 Primary Campaigns | not stated (latest entry May 21, 2008) | `extract_dia_2008_labor.R` | 73 | 2026-10-12 | complete |
 | `dia_2008_newspapers.html` | Endorsements by Newspapers and Magazines in the 2008 Primary Campaign | updated May 5, 2008 | `extract_dia_2008_newspapers.R` | 350 | 2026-09-17 | not started |
 | `dia_2008_officials.html` | Endorsements by Congressmen Senators and Governors--Feb. 5 Edition | last revised Feb. 27, 2008 | `extract_dia_2008_officials.R` | 386 | 2026-09-10 | not started |
 | `dia_2008_organizations.html` | Endorsements by National Organizations | not stated | `extract_dia_2008_organizations.R` | 15 | 2026-09-17 | complete |
