@@ -381,6 +381,7 @@ Extracted row counts include rows flagged for review (`parsed_ok = FALSE`, e.g.
   retractions coded, multi-endorser rows split, names standardized, at-large
   districts as `0`) are recorded in each script's header comment and in the
   commit history (`d0da47d`, `acae0bc`, `f72b9bc`).
+- The NY AFL-CIO resolution was included in review.
 - Citation for this data source:
   > Appleman, Eric M. Democracy in Action. "[page title]." [p2008.org / p2012.org /
   > etc.]. Accessed [date].
